@@ -1,0 +1,74 @@
+[gd_scene load_steps=11 format=3 uid="uid://cp0u3vm7aib31"]
+
+[ext_resource type="PackedScene" uid="uid://dwg6p0m8gg7fk" path="res://main_scene/player/Player.tscn" id="1"]
+[ext_resource type="PackedScene" path="res://main_scene/assets/models/main house/main_house.tscn" id="2"]
+[ext_resource type="PackedScene" path="res://main_scene/assets/models/stella/stella_moto.tscn" id="3"]
+[ext_resource type="PackedScene" path="res://main_scene/assets/models/info/info.tscn" id="4"]
+[ext_resource type="PackedScene" uid="uid://c0vnqt6uyxaoa" path="res://2/player/Player.tscn" id="5_656wq"]
+
+[sub_resource type="Sky" id="1"]
+
+[sub_resource type="Environment" id="2"]
+background_mode = 2
+sky = SubResource("1")
+
+[sub_resource type="StandardMaterial3D" id="4"]
+albedo_color = Color(0.431373, 0.556863, 0.266667, 1)
+
+[sub_resource type="BoxMesh" id="6"]
+size = Vector3(25, 11, 19)
+
+[sub_resource type="BoxShape3D" id="8"]
+size = Vector3(25.7228, 10, 17.671)
+
+[node name="Main" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("2")
+
+[node name="CSGCombiner" type="CSGCombiner3D" parent="."]
+use_collision = true
+collision_mask = 2
+
+[node name="CSGMesh" type="CSGBox3D" parent="CSGCombiner"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, -6, 0)
+size = Vector3(292.189, 412.992, 12)
+material = SubResource("4")
+
+[node name="Player" parent="." instance=ExtResource("1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 80)
+collision_mask = 5
+
+[node name="Water" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 20.3175, -30.7888)
+visible = false
+collision_layer = 4
+collision_mask = 2
+
+[node name="MeshInstance" type="MeshInstance3D" parent="Water"]
+mesh = SubResource("6")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape" type="CollisionShape3D" parent="Water"]
+shape = SubResource("8")
+
+[node name="main_house" parent="." instance=ExtResource("2")]
+transform = Transform3D(0.353553, 0, 0.353553, 0, 0.5, 0, -0.353553, 0, 0.353553, 22.7945, 0, 56.9415)
+
+[node name="stella_moto" parent="." instance=ExtResource("3")]
+transform = Transform3D(0.0707107, 0, -0.0707107, 0, 0.1, 0, 0.0707107, 0, 0.0707107, 7.20798, -0.412, 71.7917)
+
+[node name="info" parent="." instance=ExtResource("4")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 4.82845, 1.21807, 63.1431)
+
+[node name="fences" type="Node3D" parent="."]
+
+[node name="MultiMeshInstance" type="MultiMeshInstance3D" parent="fences"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.545608, 0.715709, -0.435972, -0.449621, 0.689013, 0.568421, 0.707215, -0.114113, 0.697729, 0, 2.63579, 71.6368)
+light_angular_distance = 1.0
+
+[node name="Player2" parent="." instance=ExtResource("5_656wq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.24706, 0, 80.1436)
+collision_mask = 5

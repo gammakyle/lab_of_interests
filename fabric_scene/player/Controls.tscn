@@ -1,0 +1,87 @@
+[gd_scene load_steps=5 format=3 uid="uid://e2bccij4j7ud"]
+
+[ext_resource type="Script" path="res://fabric_scene/player/Controls.gd" id="1_01mcy"]
+[ext_resource type="Script" path="res://fabric_scene/player/MobileControls.gd" id="2_qqn8r"]
+[ext_resource type="PackedScene" uid="uid://dka7avqvntd24" path="res://fabric_scene/ui/VirtualThumbStick.tscn" id="3_2mrh1"]
+[ext_resource type="PackedScene" uid="uid://b7pko6wiso3k5" path="res://fabric_scene/ui/VirtualButton.tscn" id="4_hpwj2"]
+
+[node name="Controls" type="Node" groups=["controls"]]
+script = ExtResource("1_01mcy")
+
+[node name="MobileControls" type="Control" parent="."]
+texture_filter = 6
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_qqn8r")
+
+[node name="MoveStick" parent="MobileControls" instance=ExtResource("3_2mrh1")]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.383
+anchor_right = 0.347
+offset_top = -0.184006
+offset_right = 0.255981
+offset_bottom = 0.0
+grow_horizontal = 1
+grow_vertical = 0
+
+[node name="Controls" type="Control" parent="MobileControls"]
+layout_mode = 1
+anchor_left = 0.653
+anchor_top = 0.383
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -0.256042
+offset_top = -0.184006
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MobileControls/Controls"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.18
+anchor_top = 0.18
+anchor_right = 1.62
+anchor_bottom = 0.82
+offset_right = -320.0
+offset_bottom = -3.05176e-05
+theme_override_constants/separation = 32
+alignment = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="MobileControls/Controls/VBoxContainer"]
+layout_mode = 2
+
+[node name="JumpButton" parent="MobileControls/Controls/VBoxContainer/CenterContainer" instance=ExtResource("4_hpwj2")]
+layout_mode = 2
+
+[node name="SwimUpButton" parent="MobileControls/Controls/VBoxContainer/CenterContainer" instance=ExtResource("4_hpwj2")]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MobileControls/Controls/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 128
+
+[node name="Placeholder" type="Control" parent="MobileControls/Controls/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="SprintButton" parent="MobileControls/Controls/VBoxContainer/HBoxContainer" instance=ExtResource("4_hpwj2")]
+layout_mode = 2
+
+[node name="DashButton" parent="MobileControls/Controls/VBoxContainer/HBoxContainer" instance=ExtResource("4_hpwj2")]
+layout_mode = 2
+
+[node name="SurgeButton" parent="MobileControls/Controls/VBoxContainer/HBoxContainer" instance=ExtResource("4_hpwj2")]
+layout_mode = 2
+
+[node name="CenterContainer2" type="CenterContainer" parent="MobileControls/Controls/VBoxContainer"]
+layout_mode = 2
+
+[node name="CrouchButton" parent="MobileControls/Controls/VBoxContainer/CenterContainer2" instance=ExtResource("4_hpwj2")]
+layout_mode = 2
+
+[node name="SwimDownButton" parent="MobileControls/Controls/VBoxContainer/CenterContainer2" instance=ExtResource("4_hpwj2")]
+layout_mode = 2

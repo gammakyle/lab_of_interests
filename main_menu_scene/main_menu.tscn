@@ -1,0 +1,36 @@
+[gd_scene load_steps=2 format=3 uid="uid://c7myhn7tnhov4"]
+
+[ext_resource type="Script" path="res://main_menu_scene/scripts/button_scene_main.gd" id="1_p1oyk"]
+
+[node name="main_menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button_to_main_scene" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.148
+anchor_bottom = 0.145
+offset_left = 62.0
+offset_top = 59.0
+offset_right = 0.503998
+offset_bottom = 0.0399933
+script = ExtResource("1_p1oyk")
+
+[node name="Button2" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.174
+anchor_top = 0.091
+anchor_right = 0.269
+anchor_bottom = 0.145
+offset_left = 0.551987
+offset_top = 0.0319977
+offset_right = 0.111969
+offset_bottom = 0.0399933
+
+[connection signal="pressed" from="Button_to_main_scene" to="Button_to_main_scene" method="_on_pressed"]

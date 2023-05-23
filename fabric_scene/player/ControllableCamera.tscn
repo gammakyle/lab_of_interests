@@ -13,7 +13,7 @@ script = ExtResource("1_5oq1v")
 [node name="GimbalV" type="Node3D" parent="GimbalH"]
 
 [node name="Camera3D" type="Camera3D" parent="GimbalH/GimbalV"]
-transform = Transform3D(1, 0, 0, 0, 0.82078, 0.571244, 0, -0.571244, 0.82078, 0, 3, 5)
+transform = Transform3D(1, 0, 0, 0, 0.766044, 0.642788, 0, -0.642788, 0.766044, 0.130068, 3.11742, 5.0009)
 current = true
 
 [node name="WaterDetector" type="Area3D" parent="GimbalH/GimbalV/Camera3D"]

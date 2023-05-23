@@ -5,7 +5,7 @@ class_name ControllableCamera
 @export var rotate_speed: float = 10
 @export var zoom_speed: float = 10
 @export var min_distance: float = 2
-@export var max_distance: float = 10
+@export var max_distance: float = 15
 
 @onready var _gimbal_h: Node3D = $GimbalH
 @onready var _gimbal_v: Node3D = $GimbalH/GimbalV

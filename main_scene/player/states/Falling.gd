@@ -1,1 +1,0 @@
-extends PlayerState_local

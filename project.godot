@@ -15,6 +15,10 @@ run/main_scene="res://fabric_scene/Main.tscn"
 config/features=PackedStringArray("4.0", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[filesystem]
+
+import/fbx/enabled=false
+
 [input]
 
 move_forward={

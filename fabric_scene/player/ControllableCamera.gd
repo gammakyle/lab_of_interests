@@ -5,7 +5,7 @@ class_name ControllableCamera
 @export var rotate_speed: float = 10
 @export var zoom_speed: float = 10
 @export var min_distance: float = 2
-@export var max_distance: float = 7
+@export var max_distance: float = 10
 
 @onready var _gimbal_h: Node3D = $GimbalH
 @onready var _gimbal_v: Node3D = $GimbalH/GimbalV
@@ -33,15 +33,16 @@ func _initialize_zoom_scale():
 	var initial_zoom_scale := (_distance - min_distance) / (max_distance - min_distance)
 	_controls.set_zoom_scale(initial_zoom_scale)
 '''
+'''
 func _process(delta):
 	# get the camera's current horizontal and vertical rotation angles and assign them to local fields
 	var cam_rot: Vector2 = _controls.get_camera_rotation()
 	_rot_h = cam_rot.x
 	_rot_v = cam_rot.y
-
 	# calculate the target camera distance based checked the zoom scale value of the controls node and the
 	# distance range
 	_distance = _controls.get_zoom_scale() * (max_distance - min_distance) + min_distance
+'''
 
 func _physics_process(delta):
 	# lerp the the horizontal and vertical gimbals' rotations towards the corresponding rotation angles

@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="PackedScene" uid="uid://cmqnto7pxicvp" path="res://fabric_scene/assets/models/info/info.gltf" id="1"]
+[ext_resource type="Script" path="res://fabric_scene/assets/models/rotation_round.gd" id="2"]
+
+[node name="info" instance=ExtResource( 1 )]
+script = ExtResource( 2 )

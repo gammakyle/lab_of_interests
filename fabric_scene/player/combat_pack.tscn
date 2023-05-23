@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://ddwtcpyw82sgi"]
+
+[ext_resource type="PackedScene" uid="uid://b5tymb1wjc43o" path="res://fabric_scene/assets/models/CombatPack.glb" id="1_3joov"]
+[ext_resource type="ArrayMesh" uid="uid://bq5fwpuxjrbm6" path="res://fabric_scene/player/doll_mesh.tres" id="2_adkkq"]
+
+[node name="CombatPack" instance=ExtResource("1_3joov")]
+
+[node name="Alpha_Joints" parent="Armature/Skeleton3D" index="0"]
+mesh = ExtResource("2_adkkq")

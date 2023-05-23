@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="PackedScene" uid="uid://imkp768cwts2" path="res://fabric_scene/assets/models/ekskursia/ekskursia.gltf" id="1"]
+
+[node name="ekskursia" instance=ExtResource( 1 )]

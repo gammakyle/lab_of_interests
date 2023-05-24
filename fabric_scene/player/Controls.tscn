@@ -14,6 +14,10 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 325.0
+offset_top = 75.0
+offset_right = -327.0
+offset_bottom = -73.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("2_qqn8r")
@@ -21,10 +25,8 @@ script = ExtResource("2_qqn8r")
 [node name="MoveStick" parent="MobileControls" instance=ExtResource("3_2mrh1")]
 layout_mode = 1
 anchors_preset = -1
-offset_left = 418.0
-offset_top = 172.0
-offset_right = -434.0
-offset_bottom = -176.0
+offset_right = 0.0
+offset_bottom = 0.0
 grow_horizontal = 1
 grow_vertical = 0
 

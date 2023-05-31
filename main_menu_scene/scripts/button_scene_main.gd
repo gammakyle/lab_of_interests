@@ -1,6 +1,6 @@
 extends Button
 
-var main_scene = preload("res://fabric_scene/Main.tscn")
+var main_scene = preload("res://wood_turner_inside_scene/wood_turner_inside_scene.tscn")
 
 func _on_pressed():
 	#var main_scene_instance = main_scene.instance()

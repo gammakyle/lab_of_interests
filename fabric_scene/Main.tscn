@@ -8,12 +8,12 @@
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ukb2j"]
 
-[sub_resource type="Sky" id="1"]
+[sub_resource type="Sky" id="Sky_urbna"]
 sky_material = SubResource("ProceduralSkyMaterial_ukb2j")
 
 [sub_resource type="Environment" id="2"]
 background_mode = 2
-sky = SubResource("1")
+sky = SubResource("Sky_urbna")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i1tfq"]
 albedo_color = Color(0.431373, 0.556863, 0.266667, 1)

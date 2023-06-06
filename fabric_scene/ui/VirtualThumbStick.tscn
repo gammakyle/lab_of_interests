@@ -17,7 +17,6 @@ grow_vertical = 2
 script = ExtResource("1_b6qny")
 
 [node name="Reticle" type="TextureRect" parent="."]
-visible = false
 modulate = Color(0.6, 0.6, 0.6, 1)
 layout_mode = 1
 anchors_preset = 8
@@ -35,7 +34,6 @@ texture = ExtResource("3")
 expand_mode = 1
 
 [node name="Ring" type="TextureRect" parent="."]
-visible = false
 modulate = Color(0.6, 0.6, 0.6, 1)
 layout_mode = 1
 anchors_preset = 8

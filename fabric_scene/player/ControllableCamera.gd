@@ -43,7 +43,7 @@ func _process(delta):
 	# distance range
 	_distance = _controls.get_zoom_scale() * (max_distance - min_distance) + min_distance
 '''
-
+'''
 func _physics_process(delta):
 	# lerp the the horizontal and vertical gimbals' rotations towards the corresponding rotation angles
 	# note that we're using lerp instead of lerp_angle because the latter tries to determine the rotation
@@ -55,7 +55,7 @@ func _physics_process(delta):
 	# lerp the camera's current local Z position towards the distance variable as determined by the
 	# controls node's zoom scale value in the _process method
 	_camera.transform.origin.z = lerpf(_camera.transform.origin.z, _distance, zoom_speed * delta)
-
+'''
 func _on_WaterDetector_area_entered(area):
 	# the camera is underwater, show the underwater effect
 	_underwater_effect.visible = true

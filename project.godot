@@ -12,11 +12,15 @@ config_version=5
 
 config/name="Lab Of Interests"
 run/main_scene="res://main_menu_scene/main_menu.tscn"
-config/features=PackedStringArray("4.0", "GL Compatibility")
+config/features=PackedStringArray("4.1", "GL Compatibility")
 run/max_fps=40
 run/low_processor_mode=true
 boot_splash/bg_color=Color(0.0980392, 0.345098, 0.572549, 1)
 config/icon="res://icon.svg"
+
+[autoload]
+
+SongScene="*res://songs/song_scene.tscn"
 
 [display]
 
@@ -86,12 +90,12 @@ surge={
 }
 zoom_in={
 "deadzone": 0.5,
-"events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":8,"position":Vector2(118, 3),"global_position":Vector2(122, 46),"factor":1.0,"button_index":4,"pressed":true,"double_click":false,"script":null)
+"events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":8,"position":Vector2(118, 3),"global_position":Vector2(122, 46),"factor":1.0,"button_index":4,"canceled":false,"pressed":true,"double_click":false,"script":null)
 ]
 }
 zoom_out={
 "deadzone": 0.5,
-"events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":16,"position":Vector2(153, 16),"global_position":Vector2(157, 59),"factor":1.0,"button_index":5,"pressed":true,"double_click":false,"script":null)
+"events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":16,"position":Vector2(153, 16),"global_position":Vector2(157, 59),"factor":1.0,"button_index":5,"canceled":false,"pressed":true,"double_click":false,"script":null)
 ]
 }
 
@@ -104,4 +108,3 @@ pointing/emulate_touch_from_mouse=true
 textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
-textures/vram_compression/import_s3tc_bptc=false

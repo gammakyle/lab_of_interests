@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://d0c5sfql2ugtq"]
+
+[node name="loadscreen" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -723.0
+offset_top = -189.0
+offset_right = 386.0
+offset_bottom = 388.0
+color = Color(0, 0.294118, 0.529412, 1)

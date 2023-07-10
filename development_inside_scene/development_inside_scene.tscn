@@ -1,38 +1,38 @@
-[gd_scene load_steps=29 format=3 uid="uid://crwclf4qqsh3l"]
+[gd_scene load_steps=29 format=3 uid="uid://d1cdsv7wgjckv"]
 
-[ext_resource type="PackedScene" uid="uid://c0vnqt6uyxaoa" path="res://fabric_scene/player/Player.tscn" id="1_hdfgv"]
-[ext_resource type="Script" path="res://fabric_scene/scripts/StateMachine.gd" id="2_7ns6c"]
-[ext_resource type="Script" path="res://wood_turner_inside_scene/ControlRectOff.gd" id="2_m2ksq"]
-[ext_resource type="Script" path="res://fabric_scene/player/states/Crouching.gd" id="3_nklqm"]
-[ext_resource type="Script" path="res://fabric_scene/player/states/Stopped.gd" id="4_64v67"]
-[ext_resource type="Script" path="res://fabric_scene/player/states/Running.gd" id="5_jsldp"]
-[ext_resource type="Script" path="res://fabric_scene/player/states/OnGround.gd" id="6_mrlgm"]
-[ext_resource type="Script" path="res://fabric_scene/player/states/Dashing.gd" id="7_hmsp7"]
-[ext_resource type="Script" path="res://fabric_scene/player/states/InAir.gd" id="8_6ex1m"]
-[ext_resource type="Script" path="res://fabric_scene/player/states/Falling.gd" id="9_c2w07"]
-[ext_resource type="Script" path="res://fabric_scene/player/states/Jumping.gd" id="10_llyli"]
-[ext_resource type="Script" path="res://fabric_scene/player/states/Swimming.gd" id="11_avkbt"]
-[ext_resource type="Script" path="res://fabric_scene/player/states/Diving.gd" id="12_7lw05"]
-[ext_resource type="Script" path="res://fabric_scene/player/states/OnSurface.gd" id="13_hphhu"]
-[ext_resource type="Script" path="res://fabric_scene/player/states/Underwater.gd" id="14_lakw4"]
-[ext_resource type="Script" path="res://fabric_scene/player/states/Surging.gd" id="15_2yc5t"]
-[ext_resource type="Script" path="res://fabric_scene/player/Controls.gd" id="16_5151b"]
-[ext_resource type="Script" path="res://fabric_scene/player/MobileControls.gd" id="17_5quys"]
-[ext_resource type="PackedScene" uid="uid://dka7avqvntd24" path="res://fabric_scene/ui/VirtualThumbStick.tscn" id="18_o1myk"]
-[ext_resource type="PackedScene" uid="uid://b7pko6wiso3k5" path="res://fabric_scene/ui/VirtualButton.tscn" id="19_n3guq"]
-[ext_resource type="Script" path="res://fabric_scene/player/ControllableCamera.gd" id="20_rxqqa"]
+[ext_resource type="PackedScene" uid="uid://c0vnqt6uyxaoa" path="res://fabric_scene/player/Player.tscn" id="1_6brg8"]
+[ext_resource type="Script" path="res://fabric_scene/scripts/StateMachine.gd" id="2_7k5qo"]
+[ext_resource type="Script" path="res://wood_turner_inside_scene/ControlRectOff.gd" id="2_fjow0"]
+[ext_resource type="Script" path="res://fabric_scene/player/states/Crouching.gd" id="3_urhl6"]
+[ext_resource type="Script" path="res://fabric_scene/player/states/Stopped.gd" id="4_cgs4f"]
+[ext_resource type="Script" path="res://fabric_scene/player/states/Running.gd" id="5_a4lrp"]
+[ext_resource type="Script" path="res://fabric_scene/player/states/OnGround.gd" id="6_lm0n3"]
+[ext_resource type="Script" path="res://fabric_scene/player/states/Dashing.gd" id="7_jk0rh"]
+[ext_resource type="Script" path="res://fabric_scene/player/states/InAir.gd" id="8_wlw3h"]
+[ext_resource type="Script" path="res://fabric_scene/player/states/Falling.gd" id="9_r2oub"]
+[ext_resource type="Script" path="res://fabric_scene/player/states/Jumping.gd" id="10_7wnni"]
+[ext_resource type="Script" path="res://fabric_scene/player/states/Swimming.gd" id="11_yj7ek"]
+[ext_resource type="Script" path="res://fabric_scene/player/states/Diving.gd" id="12_3xtmu"]
+[ext_resource type="Script" path="res://fabric_scene/player/states/OnSurface.gd" id="13_sm4hh"]
+[ext_resource type="Script" path="res://fabric_scene/player/states/Underwater.gd" id="14_7d128"]
+[ext_resource type="Script" path="res://fabric_scene/player/states/Surging.gd" id="15_mf8r3"]
+[ext_resource type="Script" path="res://fabric_scene/player/Controls.gd" id="16_fgpf4"]
+[ext_resource type="Script" path="res://fabric_scene/player/MobileControls.gd" id="17_j0y2n"]
+[ext_resource type="PackedScene" uid="uid://dka7avqvntd24" path="res://fabric_scene/ui/VirtualThumbStick.tscn" id="18_3tgk1"]
+[ext_resource type="PackedScene" uid="uid://b7pko6wiso3k5" path="res://fabric_scene/ui/VirtualButton.tscn" id="19_qf4q5"]
+[ext_resource type="Script" path="res://fabric_scene/player/ControllableCamera.gd" id="20_barj2"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8wew6"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_po82p"]
 albedo_color = Color(0.509804, 0.611765, 0.427451, 1)
 metallic_specular = 0.0
 roughness = 0.0
 
-[sub_resource type="Environment" id="Environment_nhi1y"]
+[sub_resource type="Environment" id="Environment_xn3sm"]
 background_mode = 1
 background_color = Color(1, 1, 1, 1)
 background_energy_multiplier = 1.5
 
-[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_umfht"]
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_1hglf"]
 
 [sub_resource type="Animation" id="Animation_w2h86"]
 length = 0.001
@@ -131,7 +131,7 @@ _data = {
 "animation_work_1": SubResource("Animation_pp71s")
 }
 
-[node name="fabric_inside_scene" type="Node3D"]
+[node name="development_inside_scene" type="Node3D"]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.653434, -0.582677, -0.483231, 3.37246e-08, -0.638364, 0.769735, -0.756984, 0.50297, 0.417129, 0, 2.5317, 0)
@@ -143,28 +143,28 @@ collision_mask = 2
 [node name="CSGMesh" type="CSGBox3D" parent="CSGCombiner"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, -6, 0)
 size = Vector3(292.189, 412.992, 12)
-material = SubResource("StandardMaterial3D_8wew6")
+material = SubResource("StandardMaterial3D_po82p")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_nhi1y")
-camera_attributes = SubResource("CameraAttributesPractical_umfht")
+environment = SubResource("Environment_xn3sm")
+camera_attributes = SubResource("CameraAttributesPractical_1hglf")
 
-[node name="Player" parent="." instance=ExtResource("1_hdfgv")]
+[node name="Player" parent="." instance=ExtResource("1_6brg8")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -15.901, 0.064, 32.8223)
 collision_mask = 5
 
 [node name="Movement" type="Node" parent="Player"]
-script = ExtResource("2_7ns6c")
+script = ExtResource("2_7k5qo")
 initial_state = NodePath("OnGround")
 
 [node name="Crouching" type="Node" parent="Player/Movement"]
-script = ExtResource("3_nklqm")
+script = ExtResource("3_urhl6")
 
 [node name="Stopped" type="Node" parent="Player/Movement/Crouching"]
-script = ExtResource("4_64v67")
+script = ExtResource("4_cgs4f")
 
 [node name="Moving" type="Node" parent="Player/Movement/Crouching"]
-script = ExtResource("5_jsldp")
+script = ExtResource("5_a4lrp")
 move_speed = 4.0
 sprint_speed = 4.0
 turn_speed = 8.0
@@ -172,13 +172,13 @@ acceleration = 30.0
 cam_follow_speed = 4.0
 
 [node name="OnGround" type="Node" parent="Player/Movement"]
-script = ExtResource("6_mrlgm")
+script = ExtResource("6_lm0n3")
 
 [node name="Stopped" type="Node" parent="Player/Movement/OnGround"]
-script = ExtResource("4_64v67")
+script = ExtResource("4_cgs4f")
 
 [node name="Running" type="Node" parent="Player/Movement/OnGround"]
-script = ExtResource("5_jsldp")
+script = ExtResource("5_a4lrp")
 move_speed = null
 sprint_speed = null
 turn_speed = null
@@ -186,13 +186,13 @@ acceleration = null
 cam_follow_speed = null
 
 [node name="Dashing" type="Node" parent="Player/Movement/OnGround"]
-script = ExtResource("7_hmsp7")
+script = ExtResource("7_jk0rh")
 dash_power = null
 stop_acceleration = null
 exit_threshold = null
 
 [node name="InAir" type="Node" parent="Player/Movement"]
-script = ExtResource("8_6ex1m")
+script = ExtResource("8_wlw3h")
 jump_cooldown = null
 gravity = null
 max_terminal_velocity = null
@@ -203,31 +203,31 @@ cam_follow_speed = null
 turn_speed = null
 
 [node name="Falling" type="Node" parent="Player/Movement/InAir"]
-script = ExtResource("9_c2w07")
+script = ExtResource("9_r2oub")
 
 [node name="Jumping" type="Node" parent="Player/Movement/InAir"]
-script = ExtResource("10_llyli")
+script = ExtResource("10_7wnni")
 jump_force = null
 
 [node name="Dashing" type="Node" parent="Player/Movement/InAir"]
-script = ExtResource("7_hmsp7")
+script = ExtResource("7_jk0rh")
 dash_power = 180.0
 stop_acceleration = null
 exit_threshold = null
 
 [node name="Swimming" type="Node" parent="Player/Movement"]
-script = ExtResource("11_avkbt")
+script = ExtResource("11_yj7ek")
 
 [node name="Diving" type="Node" parent="Player/Movement/Swimming"]
-script = ExtResource("12_7lw05")
+script = ExtResource("12_3xtmu")
 stop_speed = null
 velocity_threshold = null
 
 [node name="OnSurface" type="Node" parent="Player/Movement/Swimming"]
-script = ExtResource("13_hphhu")
+script = ExtResource("13_sm4hh")
 
 [node name="Underwater" type="Node" parent="Player/Movement/Swimming"]
-script = ExtResource("14_lakw4")
+script = ExtResource("14_7d128")
 swim_speed = null
 turn_speed = null
 acceleration = null
@@ -236,10 +236,10 @@ surge_cooldown = null
 surge_charge_duration = null
 
 [node name="Surging" type="Node" parent="Player/Movement/Swimming"]
-script = ExtResource("15_2yc5t")
+script = ExtResource("15_mf8r3")
 
 [node name="Controls" type="Node" parent="Player" groups=["controls"]]
-script = ExtResource("16_5151b")
+script = ExtResource("16_fgpf4")
 
 [node name="MobileControls" type="Control" parent="Player/Controls"]
 texture_filter = 6
@@ -253,9 +253,9 @@ offset_right = -327.0
 offset_bottom = -73.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("17_5quys")
+script = ExtResource("17_j0y2n")
 
-[node name="MoveStick" parent="Player/Controls/MobileControls" instance=ExtResource("18_o1myk")]
+[node name="MoveStick" parent="Player/Controls/MobileControls" instance=ExtResource("18_3tgk1")]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = -0.652
@@ -295,10 +295,10 @@ alignment = 1
 [node name="CenterContainer" type="CenterContainer" parent="Player/Controls/MobileControls/Controls/VBoxContainer"]
 layout_mode = 2
 
-[node name="JumpButton" parent="Player/Controls/MobileControls/Controls/VBoxContainer/CenterContainer" instance=ExtResource("19_n3guq")]
+[node name="JumpButton" parent="Player/Controls/MobileControls/Controls/VBoxContainer/CenterContainer" instance=ExtResource("19_qf4q5")]
 layout_mode = 2
 
-[node name="SwimUpButton" parent="Player/Controls/MobileControls/Controls/VBoxContainer/CenterContainer" instance=ExtResource("19_n3guq")]
+[node name="SwimUpButton" parent="Player/Controls/MobileControls/Controls/VBoxContainer/CenterContainer" instance=ExtResource("19_qf4q5")]
 layout_mode = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Player/Controls/MobileControls/Controls/VBoxContainer"]
@@ -308,28 +308,28 @@ theme_override_constants/separation = 128
 [node name="Placeholder" type="Control" parent="Player/Controls/MobileControls/Controls/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 
-[node name="SprintButton" parent="Player/Controls/MobileControls/Controls/VBoxContainer/HBoxContainer" instance=ExtResource("19_n3guq")]
+[node name="SprintButton" parent="Player/Controls/MobileControls/Controls/VBoxContainer/HBoxContainer" instance=ExtResource("19_qf4q5")]
 layout_mode = 2
 
-[node name="DashButton" parent="Player/Controls/MobileControls/Controls/VBoxContainer/HBoxContainer" instance=ExtResource("19_n3guq")]
+[node name="DashButton" parent="Player/Controls/MobileControls/Controls/VBoxContainer/HBoxContainer" instance=ExtResource("19_qf4q5")]
 layout_mode = 2
 
-[node name="SurgeButton" parent="Player/Controls/MobileControls/Controls/VBoxContainer/HBoxContainer" instance=ExtResource("19_n3guq")]
+[node name="SurgeButton" parent="Player/Controls/MobileControls/Controls/VBoxContainer/HBoxContainer" instance=ExtResource("19_qf4q5")]
 layout_mode = 2
 
 [node name="CenterContainer2" type="CenterContainer" parent="Player/Controls/MobileControls/Controls/VBoxContainer"]
 layout_mode = 2
 
-[node name="CrouchButton" parent="Player/Controls/MobileControls/Controls/VBoxContainer/CenterContainer2" instance=ExtResource("19_n3guq")]
+[node name="CrouchButton" parent="Player/Controls/MobileControls/Controls/VBoxContainer/CenterContainer2" instance=ExtResource("19_qf4q5")]
 layout_mode = 2
 
-[node name="SwimDownButton" parent="Player/Controls/MobileControls/Controls/VBoxContainer/CenterContainer2" instance=ExtResource("19_n3guq")]
+[node name="SwimDownButton" parent="Player/Controls/MobileControls/Controls/VBoxContainer/CenterContainer2" instance=ExtResource("19_qf4q5")]
 layout_mode = 2
 
 [node name="CamRoot2" type="Node3D" parent="Player"]
 
 [node name="ControllableCamera" type="Node3D" parent="Player/CamRoot2"]
-script = ExtResource("20_rxqqa")
+script = ExtResource("20_barj2")
 
 [node name="GimbalH" type="Node3D" parent="Player/CamRoot2/ControllableCamera"]
 
@@ -413,7 +413,7 @@ anchor_right = 1.058
 anchor_bottom = 1.049
 offset_right = 0.183838
 offset_bottom = 0.247986
-script = ExtResource("2_m2ksq")
+script = ExtResource("2_fjow0")
 
 [node name="ColorRect" type="ColorRect" parent="Control"]
 layout_mode = 0

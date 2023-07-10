@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=3 uid="uid://duugmnauemcc7"]
+[gd_scene load_steps=49 format=3 uid="uid://duugmnauemcc7"]
 
 [ext_resource type="PackedScene" uid="uid://c0vnqt6uyxaoa" path="res://fabric_scene/player/Player.tscn" id="1"]
 [ext_resource type="Material" uid="uid://bes7mv20tcqw" path="res://fabric_scene/assets/matherials/road.tres" id="1_j5wb7"]
@@ -27,6 +27,7 @@
 [ext_resource type="Script" path="res://fabric_scene/player/states/Underwater.gd" id="18_78btd"]
 [ext_resource type="Script" path="res://fabric_scene/player/states/Surging.gd" id="19_ogspn"]
 [ext_resource type="Script" path="res://fabric_scene/player/ControllableCamera.gd" id="24_15db1"]
+[ext_resource type="Script" path="res://wood_turner_inside_scene/ControlRectOff.gd" id="28_s4l26"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_id0k0"]
 albedo_color = Color(0.509804, 0.611765, 0.427451, 1)
@@ -691,6 +692,7 @@ anchor_right = 1.058
 anchor_bottom = 1.049
 offset_right = 0.183838
 offset_bottom = 0.247986
+script = ExtResource("28_s4l26")
 
 [node name="ColorRect" type="ColorRect" parent="Control"]
 layout_mode = 0

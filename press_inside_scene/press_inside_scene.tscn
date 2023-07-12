@@ -1,0 +1,422 @@
+[gd_scene load_steps=29 format=3 uid="uid://b28m6xoq3ldtf"]
+
+[ext_resource type="PackedScene" uid="uid://c0vnqt6uyxaoa" path="res://fabric_scene/player/Player.tscn" id="1_q586o"]
+[ext_resource type="Script" path="res://fabric_scene/scripts/StateMachine.gd" id="2_j53xc"]
+[ext_resource type="Script" path="res://fabric_scene/player/states/Crouching.gd" id="3_ml5kw"]
+[ext_resource type="Script" path="res://fabric_scene/player/states/Stopped.gd" id="4_e7kca"]
+[ext_resource type="Script" path="res://fabric_scene/player/states/Running.gd" id="5_wgtqw"]
+[ext_resource type="Script" path="res://fabric_scene/player/states/OnGround.gd" id="6_sl6i0"]
+[ext_resource type="Script" path="res://fabric_scene/player/states/Dashing.gd" id="7_updaw"]
+[ext_resource type="Script" path="res://fabric_scene/player/states/InAir.gd" id="8_svbel"]
+[ext_resource type="Script" path="res://fabric_scene/player/states/Falling.gd" id="9_blw7n"]
+[ext_resource type="Script" path="res://fabric_scene/player/states/Jumping.gd" id="10_ccs32"]
+[ext_resource type="Script" path="res://fabric_scene/player/states/Swimming.gd" id="11_amh0o"]
+[ext_resource type="Script" path="res://fabric_scene/player/states/Diving.gd" id="12_lmtdn"]
+[ext_resource type="Script" path="res://fabric_scene/player/states/OnSurface.gd" id="13_e8y7d"]
+[ext_resource type="Script" path="res://fabric_scene/player/states/Underwater.gd" id="14_nvsxa"]
+[ext_resource type="Script" path="res://fabric_scene/player/states/Surging.gd" id="15_ey22f"]
+[ext_resource type="Script" path="res://fabric_scene/player/Controls.gd" id="16_6p24t"]
+[ext_resource type="Script" path="res://fabric_scene/player/MobileControls.gd" id="17_02hgs"]
+[ext_resource type="PackedScene" uid="uid://dka7avqvntd24" path="res://fabric_scene/ui/VirtualThumbStick.tscn" id="18_85sml"]
+[ext_resource type="PackedScene" uid="uid://b7pko6wiso3k5" path="res://fabric_scene/ui/VirtualButton.tscn" id="19_074ti"]
+[ext_resource type="Script" path="res://fabric_scene/player/ControllableCamera.gd" id="20_r6wj1"]
+[ext_resource type="Script" path="res://wood_turner_inside_scene/ControlRectOff.gd" id="21_b2ecc"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1yhaw"]
+albedo_color = Color(0.509804, 0.611765, 0.427451, 1)
+metallic_specular = 0.0
+roughness = 0.0
+
+[sub_resource type="Environment" id="Environment_jwlrs"]
+background_mode = 1
+background_color = Color(1, 1, 1, 1)
+background_energy_multiplier = 1.5
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_2prcv"]
+
+[sub_resource type="Animation" id="Animation_w2h86"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 12.977, 23.683)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.456735, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_b3q4n"]
+resource_name = "animation_eks_1"
+length = 2.0
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array()
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(-1.56917, -1.56917),
+"update": 0,
+"values": [Vector3(0, 12.977, 23.683), Vector3(-6.413, 1.786, -2.11)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:rotation")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(-1.56917, -1.56917),
+"update": 0,
+"values": [Vector3(-0.456735, 0, 0), Vector3(-0.0506146, -0.591667, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_pp71s"]
+resource_name = "animation_work_1"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(-2, -2),
+"update": 0,
+"values": [Vector3(0, 12.977, 23.683), Vector3(4.386, 2.736, -1.977)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(-2, -2),
+"update": 0,
+"values": [Vector3(-0.457276, 0, 0), Vector3(-0.225147, 0.528835, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_w70cl"]
+_data = {
+"RESET": SubResource("Animation_w2h86"),
+"animation_eks_1": SubResource("Animation_b3q4n"),
+"animation_work_1": SubResource("Animation_pp71s")
+}
+
+[node name="press_inside_scene" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.653434, -0.582677, -0.483231, 3.37246e-08, -0.638364, 0.769735, -0.756984, 0.50297, 0.417129, 0, 2.5317, 0)
+
+[node name="CSGCombiner" type="CSGCombiner3D" parent="."]
+use_collision = true
+collision_mask = 2
+
+[node name="CSGMesh" type="CSGBox3D" parent="CSGCombiner"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, -6, 0)
+size = Vector3(292.189, 412.992, 12)
+material = SubResource("StandardMaterial3D_1yhaw")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_jwlrs")
+camera_attributes = SubResource("CameraAttributesPractical_2prcv")
+
+[node name="Player" parent="." instance=ExtResource("1_q586o")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -15.901, 0.064, 32.8223)
+collision_mask = 5
+
+[node name="Movement" type="Node" parent="Player"]
+script = ExtResource("2_j53xc")
+initial_state = NodePath("OnGround")
+
+[node name="Crouching" type="Node" parent="Player/Movement"]
+script = ExtResource("3_ml5kw")
+
+[node name="Stopped" type="Node" parent="Player/Movement/Crouching"]
+script = ExtResource("4_e7kca")
+
+[node name="Moving" type="Node" parent="Player/Movement/Crouching"]
+script = ExtResource("5_wgtqw")
+move_speed = 4.0
+sprint_speed = 4.0
+turn_speed = 8.0
+acceleration = 30.0
+cam_follow_speed = 4.0
+
+[node name="OnGround" type="Node" parent="Player/Movement"]
+script = ExtResource("6_sl6i0")
+
+[node name="Stopped" type="Node" parent="Player/Movement/OnGround"]
+script = ExtResource("4_e7kca")
+
+[node name="Running" type="Node" parent="Player/Movement/OnGround"]
+script = ExtResource("5_wgtqw")
+move_speed = null
+sprint_speed = null
+turn_speed = null
+acceleration = null
+cam_follow_speed = null
+
+[node name="Dashing" type="Node" parent="Player/Movement/OnGround"]
+script = ExtResource("7_updaw")
+dash_power = null
+stop_acceleration = null
+exit_threshold = null
+
+[node name="InAir" type="Node" parent="Player/Movement"]
+script = ExtResource("8_svbel")
+jump_cooldown = null
+gravity = null
+max_terminal_velocity = null
+max_jumps = null
+air_speed = null
+air_acceleration = null
+cam_follow_speed = null
+turn_speed = null
+
+[node name="Falling" type="Node" parent="Player/Movement/InAir"]
+script = ExtResource("9_blw7n")
+
+[node name="Jumping" type="Node" parent="Player/Movement/InAir"]
+script = ExtResource("10_ccs32")
+jump_force = null
+
+[node name="Dashing" type="Node" parent="Player/Movement/InAir"]
+script = ExtResource("7_updaw")
+dash_power = 180.0
+stop_acceleration = null
+exit_threshold = null
+
+[node name="Swimming" type="Node" parent="Player/Movement"]
+script = ExtResource("11_amh0o")
+
+[node name="Diving" type="Node" parent="Player/Movement/Swimming"]
+script = ExtResource("12_lmtdn")
+stop_speed = null
+velocity_threshold = null
+
+[node name="OnSurface" type="Node" parent="Player/Movement/Swimming"]
+script = ExtResource("13_e8y7d")
+
+[node name="Underwater" type="Node" parent="Player/Movement/Swimming"]
+script = ExtResource("14_nvsxa")
+swim_speed = null
+turn_speed = null
+acceleration = null
+cam_follow_speed = null
+surge_cooldown = null
+surge_charge_duration = null
+
+[node name="Surging" type="Node" parent="Player/Movement/Swimming"]
+script = ExtResource("15_ey22f")
+
+[node name="Controls" type="Node" parent="Player" groups=["controls"]]
+script = ExtResource("16_6p24t")
+
+[node name="MobileControls" type="Control" parent="Player/Controls"]
+texture_filter = 6
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 325.0
+offset_top = 75.0
+offset_right = -327.0
+offset_bottom = -73.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("17_02hgs")
+
+[node name="MoveStick" parent="Player/Controls/MobileControls" instance=ExtResource("18_85sml")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.652
+anchor_top = -0.147
+anchor_right = 1.656
+anchor_bottom = 1.145
+offset_left = 326.0
+offset_top = 73.5
+offset_right = -328.0
+offset_bottom = -72.5001
+grow_horizontal = 1
+grow_vertical = 0
+
+[node name="Controls" type="Control" parent="Player/Controls/MobileControls"]
+layout_mode = 1
+anchor_left = 0.653
+anchor_top = 0.383
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -0.256042
+offset_top = -0.184006
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Player/Controls/MobileControls/Controls"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.18
+anchor_top = 0.18
+anchor_right = 1.62
+anchor_bottom = 0.82
+offset_right = -320.0
+offset_bottom = -3.05176e-05
+theme_override_constants/separation = 32
+alignment = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="Player/Controls/MobileControls/Controls/VBoxContainer"]
+layout_mode = 2
+
+[node name="JumpButton" parent="Player/Controls/MobileControls/Controls/VBoxContainer/CenterContainer" instance=ExtResource("19_074ti")]
+layout_mode = 2
+
+[node name="SwimUpButton" parent="Player/Controls/MobileControls/Controls/VBoxContainer/CenterContainer" instance=ExtResource("19_074ti")]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Player/Controls/MobileControls/Controls/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 128
+
+[node name="Placeholder" type="Control" parent="Player/Controls/MobileControls/Controls/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="SprintButton" parent="Player/Controls/MobileControls/Controls/VBoxContainer/HBoxContainer" instance=ExtResource("19_074ti")]
+layout_mode = 2
+
+[node name="DashButton" parent="Player/Controls/MobileControls/Controls/VBoxContainer/HBoxContainer" instance=ExtResource("19_074ti")]
+layout_mode = 2
+
+[node name="SurgeButton" parent="Player/Controls/MobileControls/Controls/VBoxContainer/HBoxContainer" instance=ExtResource("19_074ti")]
+layout_mode = 2
+
+[node name="CenterContainer2" type="CenterContainer" parent="Player/Controls/MobileControls/Controls/VBoxContainer"]
+layout_mode = 2
+
+[node name="CrouchButton" parent="Player/Controls/MobileControls/Controls/VBoxContainer/CenterContainer2" instance=ExtResource("19_074ti")]
+layout_mode = 2
+
+[node name="SwimDownButton" parent="Player/Controls/MobileControls/Controls/VBoxContainer/CenterContainer2" instance=ExtResource("19_074ti")]
+layout_mode = 2
+
+[node name="CamRoot2" type="Node3D" parent="Player"]
+
+[node name="ControllableCamera" type="Node3D" parent="Player/CamRoot2"]
+script = ExtResource("20_r6wj1")
+
+[node name="GimbalH" type="Node3D" parent="Player/CamRoot2/ControllableCamera"]
+
+[node name="GimbalV" type="Node3D" parent="Player/CamRoot2/ControllableCamera/GimbalH"]
+
+[node name="Camera3D" type="Camera3D" parent="Player/CamRoot2/ControllableCamera/GimbalH/GimbalV"]
+transform = Transform3D(1, 0, 0, 0, 0.897497, 0.44102, 0, -0.44102, 0.897497, 0, 12.977, 23.683)
+current = true
+fov = 40.0
+near = 1.0
+far = 300.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Player/CamRoot2/ControllableCamera/GimbalH/GimbalV/Camera3D"]
+libraries = {
+"": SubResource("AnimationLibrary_w70cl")
+}
+
+[node name="interface" type="Node" parent="Player"]
+
+[node name="Panel" type="Panel" parent="Player/interface"]
+custom_minimum_size = Vector2(300, 0)
+anchors_preset = -1
+anchor_top = 0.645
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 38.0
+offset_top = 0.0119324
+offset_right = -35.0
+offset_bottom = -22.028
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Player/interface/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.461
+anchor_top = 0.678
+anchor_right = 0.538
+anchor_bottom = 0.909
+offset_left = -1.41901
+offset_top = 0.00398254
+offset_right = -0.502075
+offset_bottom = -0.0440216
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 32
+text = "12/12"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="Player/interface/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.673
+anchor_right = 0.429
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_top = 0.0439911
+offset_right = 0.108948
+offset_bottom = -14.972
+theme_override_font_sizes/font_size = 32
+text = "назад"
+
+[node name="Button2" type="Button" parent="Player/interface/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.574
+anchor_top = 0.673
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -0.346008
+offset_top = 0.0439911
+offset_right = -15.0
+offset_bottom = -14.972
+theme_override_font_sizes/font_size = 32
+text = "вперед"
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchor_right = 1.058
+anchor_bottom = 1.049
+offset_right = 0.183838
+offset_bottom = 0.247986
+script = ExtResource("21_b2ecc")
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
+layout_mode = 0
+offset_right = 1153.0
+offset_bottom = 648.0
+color = Color(0, 0.294118, 0.529412, 1)

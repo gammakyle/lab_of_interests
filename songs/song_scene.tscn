@@ -1,8 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://bpfo3v50gepwf"]
+[gd_scene load_steps=3 format=3 uid="uid://bpfo3v50gepwf"]
 
+[ext_resource type="Script" path="res://songs/global_song_scritp.gd" id="1_okfax"]
 [ext_resource type="AudioStream" uid="uid://cb5mtyvp4dqvn" path="res://songs/main_music.mp3" id="2_i4vyb"]
 
 [node name="song_scene" type="Node2D"]
+script = ExtResource("1_okfax")
 
 [node name="Music_manager" type="Control" parent="."]
 layout_mode = 3

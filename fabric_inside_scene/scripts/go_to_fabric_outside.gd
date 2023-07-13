@@ -1,15 +1,13 @@
 extends Area3D
 
-var fabric_scene = load("res://fabric_inside_scene/fabric_inside_scene.tscn")
+var fabric_scene = load("res://fabric_scene/Main.tscn")
 #@onready var _PRELOADER: Control = $"../../../Control"
-@onready var _PRELOADER: ColorRect = $"../../../Control/ColorRect"
+@onready var _PRELOADER: ColorRect = $"../../Control/ColorRect"
 var alpha: float = 0
 var animating_exit: bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	var alpha: float = 0
-	var animating_exit: bool = false
 	_PRELOADER.modulate = Color(1, 1, 1, 0)
 	pass # Replace with function body.
 

@@ -1,11 +1,10 @@
-[gd_scene load_steps=49 format=3 uid="uid://duugmnauemcc7"]
+[gd_scene load_steps=66 format=3 uid="uid://duugmnauemcc7"]
 
 [ext_resource type="PackedScene" uid="uid://c0vnqt6uyxaoa" path="res://fabric_scene/player/Player.tscn" id="1"]
 [ext_resource type="Material" uid="uid://bes7mv20tcqw" path="res://fabric_scene/assets/matherials/road.tres" id="1_j5wb7"]
 [ext_resource type="Script" path="res://fabric_scene/player/Controls.gd" id="2_c1b3p"]
 [ext_resource type="Script" path="res://fabric_scene/player/MobileControls.gd" id="3_13xoq"]
 [ext_resource type="PackedScene" path="res://fabric_scene/assets/models/stella/stella_moto.tscn" id="3_hgxs8"]
-[ext_resource type="Material" uid="uid://be7l674u5xc74" path="res://fabric_scene/assets/matherials/mainrock matherial.tres" id="4_0mew3"]
 [ext_resource type="PackedScene" uid="uid://uuptr1hqu833" path="res://fabric_scene/assets/models/info/info.tscn" id="4_do67m"]
 [ext_resource type="PackedScene" uid="uid://dka7avqvntd24" path="res://fabric_scene/ui/VirtualThumbStick.tscn" id="4_yrrtd"]
 [ext_resource type="Script" path="res://fabric_scene/assets/models/round_rotation.gd" id="5_1ucn6"]
@@ -28,6 +27,17 @@
 [ext_resource type="Script" path="res://fabric_scene/player/states/Surging.gd" id="19_ogspn"]
 [ext_resource type="Script" path="res://fabric_scene/player/ControllableCamera.gd" id="24_15db1"]
 [ext_resource type="Script" path="res://wood_turner_inside_scene/ControlRectOff.gd" id="28_s4l26"]
+[ext_resource type="PackedScene" uid="uid://c3xr1rms87ofy" path="res://fabric_scene/assets/models/waterbox/waterbox.gltf" id="29_1k3eg"]
+[ext_resource type="PackedScene" uid="uid://bi0aaw86kdy74" path="res://fabric_scene/assets/models/100 years/100 years.gltf" id="29_wc70e"]
+[ext_resource type="PackedScene" uid="uid://mka7hpwf2qp" path="res://fabric_scene/assets/models/fence_mini/fence_mini.gltf" id="30_645g1"]
+[ext_resource type="PackedScene" uid="uid://bmbe23rt2vfof" path="res://fabric_scene/assets/models/tree/tree_foliage.gltf" id="31_hqpcx"]
+[ext_resource type="PackedScene" uid="uid://nlo62lxcqw0t" path="res://fabric_scene/assets/models/tree/tree_wood.gltf" id="32_vdo5r"]
+[ext_resource type="Material" uid="uid://bcf2xid0q8355" path="res://fabric_scene/assets/matherials/up_house.tres" id="33_d4djk"]
+[ext_resource type="Material" uid="uid://kr8bygn2kxdy" path="res://fabric_scene/assets/matherials/rose_color.tres" id="34_uh46e"]
+[ext_resource type="Material" uid="uid://btg8skynfedwg" path="res://fabric_scene/assets/matherials/rose_1_color.tres" id="35_1lbw8"]
+[ext_resource type="PackedScene" uid="uid://vlla5v60eep8" path="res://fabric_scene/assets/models/flowerbox/flowerbox.gltf" id="36_l485y"]
+[ext_resource type="PackedScene" uid="uid://be6vv6hcghfky" path="res://fabric_scene/assets/models/fake_window/fake_window.gltf" id="37_8j3ls"]
+[ext_resource type="PackedScene" uid="uid://b850msk6xv1r1" path="res://fabric_scene/assets/models/stay_fetch/stay_fetch.gltf" id="38_8wpyk"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_id0k0"]
 albedo_color = Color(0.509804, 0.611765, 0.427451, 1)
@@ -194,6 +204,26 @@ albedo_color = Color(0.521569, 0.694118, 0.784314, 1)
 [sub_resource type="SphereShape3D" id="SphereShape3D_uyvi4"]
 radius = 5.78989
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3npyh"]
+albedo_color = Color(0.329412, 0.462745, 0.25098, 1)
+metallic_specular = 0.0
+roughness = 0.0
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_llkl7"]
+material = SubResource("StandardMaterial3D_3npyh")
+top_radius = 0.585
+bottom_radius = 1.035
+height = 0.29
+radial_segments = 7
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3aclp"]
+albedo_color = Color(0.87451, 0.603922, 0.419608, 1)
+metallic_specular = 0.0
+roughness = 0.0
+
+[sub_resource type="BoxMesh" id="BoxMesh_6to8n"]
+material = SubResource("StandardMaterial3D_3aclp")
+
 [sub_resource type="Animation" id="Animation_w2h86"]
 length = 0.001
 tracks/0/type = "value"
@@ -291,6 +321,13 @@ _data = {
 "animation_work_1": SubResource("Animation_pp71s")
 }
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_3i0ds"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_q2ysf"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sodbi"]
+albedo_color = Color(1, 0, 0.188235, 1)
+
 [node name="Main" type="Node3D"]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
@@ -328,15 +365,36 @@ mesh = SubResource("BoxMesh_a6v0c")
 skeleton = NodePath("../../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_f6l5l")
 
+[node name="road8" type="MeshInstance3D" parent="scene objects/roads"]
+transform = Transform3D(0.75, 0, 0, 0, 1, 0, 0, 0, 10, 2.28022, 0, -0.669598)
+material_override = ExtResource("1_j5wb7")
+mesh = SubResource("BoxMesh_a6v0c")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_f6l5l")
+
+[node name="road9" type="MeshInstance3D" parent="scene objects/roads"]
+transform = Transform3D(-4.47035e-08, 0, 10, 0, 1, 0, -0.75, 0, 0, 6.8926, 0, -5.92465)
+material_override = ExtResource("1_j5wb7")
+mesh = SubResource("BoxMesh_a6v0c")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_f6l5l")
+
 [node name="road3" type="MeshInstance3D" parent="scene objects/roads"]
-transform = Transform3D(10, 0, 0, 0, 1, 0, 0, 0, 6, 2.37032, 0, -10.26)
+transform = Transform3D(12, 0, 0, 0, 1, 0, 0, 0, 6, 1.13154, 0, -10.175)
+material_override = ExtResource("1_j5wb7")
+mesh = SubResource("BoxMesh_a6v0c")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_f6l5l")
+
+[node name="road7" type="MeshInstance3D" parent="scene objects/roads"]
+transform = Transform3D(7, 0, 0, 0, 1, 0, 0, 0, 1.3, -5.57368, 0, -6.57383)
 material_override = ExtResource("1_j5wb7")
 mesh = SubResource("BoxMesh_a6v0c")
 skeleton = NodePath("../../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_f6l5l")
 
 [node name="road4" type="MeshInstance3D" parent="scene objects/roads"]
-transform = Transform3D(10, 0, 0, 0, 1, 0, 0, 0, 6, -0.0782162, 0, 5.56709)
+transform = Transform3D(10, 0, 0, 0, 1, 0, 0, 0, 6, -0.0200204, 0, 5.38928)
 material_override = ExtResource("1_j5wb7")
 mesh = SubResource("BoxMesh_a6v0c")
 skeleton = NodePath("../../..")
@@ -372,33 +430,18 @@ shape = SubResource("ConcavePolygonShape3D_ek3v8")
 transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, -88.3079, 0, -122.873)
 
 [node name="stella_moto" parent="scene objects/houses and rocks" instance=ExtResource("3_hgxs8")]
-transform = Transform3D(0.0125, 0, 0, 0, 3.33333, 0, 0, 0, 0.02, -0.0375084, -13.7333, 1.96957)
+transform = Transform3D(0.0125, 0, 0, 0, 3.33333, 0, 0, 0, 0.02, -0.0220616, -13.7333, 1.5402)
 
 [node name="mainrock" type="Node3D" parent="scene objects/houses and rocks"]
 
-[node name="rock" type="MeshInstance3D" parent="scene objects/houses and rocks/mainrock"]
-transform = Transform3D(0.15, 0, 0, 0, 150, 0, 0, 0, 1.5, -2.42778, 72.3374, -2.29949)
-material_override = ExtResource("4_0mew3")
-mesh = SubResource("BoxMesh_a6v0c")
-skeleton = NodePath("../../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_f6l5l")
-
-[node name="rock2" type="MeshInstance3D" parent="scene objects/houses and rocks/mainrock"]
-transform = Transform3D(0.15, 0, 0, 0, 100, 0, 0, 0, 0.3, -2.43942, 49.4724, -1.31677)
-material_override = ExtResource("4_0mew3")
-mesh = SubResource("BoxMesh_a6v0c")
-skeleton = NodePath("../../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_f6l5l")
-
-[node name="rock3" type="MeshInstance3D" parent="scene objects/houses and rocks/mainrock"]
-transform = Transform3D(0.15, 0, 0, 0, 100, 0, 0, 0, 0.3, -2.44095, 49.4724, -3.29547)
-material_override = ExtResource("4_0mew3")
-mesh = SubResource("BoxMesh_a6v0c")
-skeleton = NodePath("../../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_f6l5l")
-
 [node name="earth_plato5" type="MeshInstance3D" parent="scene objects"]
-transform = Transform3D(5.14095, 0.00137736, 124.516, 19121.9, -1.92524, -1660.64, 34.1907, 0.0382323, -14.494, 5.48377, 3152.54, -43.7872)
+transform = Transform3D(5.12647, 0.0873858, 399.588, 19121.9, -0.00345621, -0.0747465, 34.1168, 1.92401, -18.1488, 5.48377, 3152.54, -43.7872)
+mesh = SubResource("BoxMesh_hdkrr")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_sa8sj")
+
+[node name="earth_plato6" type="MeshInstance3D" parent="scene objects"]
+transform = Transform3D(1422.57, 0.353508, -363.711, 914335, -61.3018, -39299.6, -10990.9, 1.41922, -23.4081, -65.908, 7082.86, -7.71866)
 mesh = SubResource("BoxMesh_hdkrr")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_sa8sj")
@@ -428,8 +471,1199 @@ script = ExtResource("5_1ucn6")
 transform = Transform3D(0.229325, 0, 0.444309, 0, 0.5, 0, -0.444309, 0, 0.229325, 16.3382, 0.756645, -10.2917)
 script = ExtResource("5_1ucn6")
 
+[node name="100 years" parent="scene objects" instance=ExtResource("29_wc70e")]
+transform = Transform3D(0.0812466, 0, -0.000754401, 0, 21.6667, 0, 0.00120704, 0, 0.129995, -2.71684, 1.63217, -2.31666)
+
+[node name="waterbox_main" type="Node3D" parent="scene objects"]
+transform = Transform3D(0.0624912, 0, -0.00105151, 0, 16.6667, 0, 0.00168242, 0, 0.099986, 3.00702, 10.7363, -9.43425)
+
+[node name="waterbox" parent="scene objects/waterbox_main" instance=ExtResource("29_1k3eg")]
+transform = Transform3D(0.999896, 0, 0.014381, 0, 1, 0, -0.014381, 0, 0.999896, 8.0149, 0, 2.77282)
+
+[node name="fence" type="Node3D" parent="scene objects"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00205755, 0, -0.232393)
+
+[node name="fence_mini" parent="scene objects/fence" instance=ExtResource("30_645g1")]
+transform = Transform3D(0.050004, 0, 0.000405759, 0, 13.3333, 0, 0.000290047, 0, 0.079996, 1.22773, 15.5463, 2.28112)
+
+[node name="fence_mini2" parent="scene objects/fence" instance=ExtResource("30_645g1")]
+transform = Transform3D(0.050004, 0, 0.000405759, 0, 13.3333, 0, 0.000290047, 0, 0.079996, 1.22821, 15.5463, 1.78423)
+
+[node name="fence_mini3" parent="scene objects/fence" instance=ExtResource("30_645g1")]
+transform = Transform3D(0.050004, 0, 0.000405759, 0, 13.3333, 0, 0.000290047, 0, 0.079996, 1.2292, 15.5463, 1.28513)
+
+[node name="fence_mini4" parent="scene objects/fence" instance=ExtResource("30_645g1")]
+transform = Transform3D(0.050004, 0, 0.000405759, 0, 13.3333, 0, 0.000290047, 0, 0.079996, 1.22967, 15.5463, 0.788241)
+
+[node name="fence_mini5" parent="scene objects/fence" instance=ExtResource("30_645g1")]
+transform = Transform3D(0.050004, 0, 0.000405759, 0, 13.3333, 0, 0.000290047, 0, 0.079996, 1.22903, 15.5463, 0.294899)
+
+[node name="fence_mini6" parent="scene objects/fence" instance=ExtResource("30_645g1")]
+transform = Transform3D(0.050004, 0, 0.000405759, 0, 13.3333, 0, 0.000290047, 0, 0.079996, 1.2295, 15.5463, -0.201991)
+
+[node name="fence_mini7" parent="scene objects/fence" instance=ExtResource("30_645g1")]
+transform = Transform3D(0.050004, 0, 0.000405759, 0, 13.3333, 0, 0.000290047, 0, 0.079996, 1.23049, 15.5463, -0.70109)
+
+[node name="fence_mini8" parent="scene objects/fence" instance=ExtResource("30_645g1")]
+transform = Transform3D(0.050004, 0, 0.000405759, 0, 13.3333, 0, 0.000290047, 0, 0.079996, 1.23096, 15.5463, -1.19798)
+
+[node name="fence_mini9" parent="scene objects/fence" instance=ExtResource("30_645g1")]
+transform = Transform3D(0.050004, 0, 0.000405759, 0, 13.3333, 0, 0.000290047, 0, 0.079996, 1.23134, 15.5463, -1.69128)
+
+[node name="fence_mini10" parent="scene objects/fence" instance=ExtResource("30_645g1")]
+transform = Transform3D(0.050004, 0, 0.000405759, 0, 13.3333, 0, 0.000290047, 0, 0.079996, 1.23181, 15.5463, -2.18817)
+
+[node name="fence_mini11" parent="scene objects/fence" instance=ExtResource("30_645g1")]
+transform = Transform3D(0.050004, 0, 0.000405759, 0, 13.3333, 0, 0.000290047, 0, 0.079996, 1.2328, 15.5463, -2.68727)
+
+[node name="fence_mini12" parent="scene objects/fence" instance=ExtResource("30_645g1")]
+transform = Transform3D(0.050004, 0, 0.000405759, 0, 13.3333, 0, 0.000290047, 0, 0.079996, 1.23327, 15.5463, -3.18416)
+
+[node name="fence_mini13" parent="scene objects/fence" instance=ExtResource("30_645g1")]
+transform = Transform3D(0.050004, 0, 0.000405759, 0, 13.3333, 0, 0.000290047, 0, 0.079996, 1.23263, 15.5463, -3.6775)
+
+[node name="fence_mini14" parent="scene objects/fence" instance=ExtResource("30_645g1")]
+transform = Transform3D(0.050004, 0, 0.000405759, 0, 13.3333, 0, 0.000290047, 0, 0.079996, 1.2331, 15.5463, -4.17439)
+
+[node name="fence_mini15" parent="scene objects/fence" instance=ExtResource("30_645g1")]
+transform = Transform3D(0.050004, 0, 0.000405759, 0, 13.3333, 0, 0.000290047, 0, 0.079996, 1.23409, 15.5463, -4.67349)
+
+[node name="fence_mini16" parent="scene objects/fence" instance=ExtResource("30_645g1")]
+transform = Transform3D(0.050004, 0, 0.000405759, 0, 13.3333, 0, 0.000290047, 0, 0.079996, 1.23456, 15.5463, -5.17038)
+
+[node name="fence_mini17" parent="scene objects/fence" instance=ExtResource("30_645g1")]
+transform = Transform3D(0.050004, 0, 0.000405759, 0, 13.3333, 0, 0.000290047, 0, 0.079996, 1.23252, 15.5463, -5.67203)
+
+[node name="fence_mini18" parent="scene objects/fence" instance=ExtResource("30_645g1")]
+transform = Transform3D(0.050004, 0, 0.000405759, 0, 13.3333, 0, 0.000290047, 0, 0.079996, 1.23351, 15.5463, -6.17113)
+
+[node name="fence_mini19" parent="scene objects/fence" instance=ExtResource("30_645g1")]
+transform = Transform3D(0.050004, 0, 0.000405759, 0, 13.3333, 0, 0.000290047, 0, 0.079996, 1.23398, 15.5463, -6.66803)
+
+[node name="fence_mini26" parent="scene objects/fence" instance=ExtResource("30_645g1")]
+transform = Transform3D(0.050004, 0, 0.000405759, 0, 13.3333, 0, 0.000290047, 0, 0.079996, 0.436943, 15.5463, -0.633846)
+
+[node name="fence_mini38" parent="scene objects/fence" instance=ExtResource("30_645g1")]
+transform = Transform3D(0.050004, 0, 0.000405759, 0, 13.3333, 0, 0.000290047, 0, 0.079996, 0.437415, 15.5463, -1.13074)
+
+[node name="fence_mini40" parent="scene objects/fence" instance=ExtResource("30_645g1")]
+transform = Transform3D(0.050004, 0, 0.000405759, 0, 13.3333, 0, 0.000290047, 0, 0.079996, 0.437788, 15.5463, -1.62403)
+
+[node name="fence_mini41" parent="scene objects/fence" instance=ExtResource("30_645g1")]
+transform = Transform3D(0.050004, 0, 0.000405759, 0, 13.3333, 0, 0.000290047, 0, 0.079996, 0.438261, 15.5463, -2.12092)
+
+[node name="fence_mini42" parent="scene objects/fence" instance=ExtResource("30_645g1")]
+transform = Transform3D(0.050004, 0, 0.000405759, 0, 13.3333, 0, 0.000290047, 0, 0.079996, 0.439248, 15.5463, -2.62002)
+
+[node name="fence_mini43" parent="scene objects/fence" instance=ExtResource("30_645g1")]
+transform = Transform3D(0.050004, 0, 0.000405759, 0, 13.3333, 0, 0.000290047, 0, 0.079996, 0.439721, 15.5463, -3.11691)
+
+[node name="fence_mini44" parent="scene objects/fence" instance=ExtResource("30_645g1")]
+transform = Transform3D(0.050004, 0, 0.000405759, 0, 13.3333, 0, 0.000290047, 0, 0.079996, 0.439082, 15.5463, -3.61025)
+
+[node name="fence_mini45" parent="scene objects/fence" instance=ExtResource("30_645g1")]
+transform = Transform3D(0.050004, 0, 0.000405759, 0, 13.3333, 0, 0.000290047, 0, 0.079996, 0.439554, 15.5463, -4.10714)
+
+[node name="fence_mini46" parent="scene objects/fence" instance=ExtResource("30_645g1")]
+transform = Transform3D(0.050004, 0, 0.000405759, 0, 13.3333, 0, 0.000290047, 0, 0.079996, 0.440542, 15.5463, -4.60624)
+
+[node name="fence_mini47" parent="scene objects/fence" instance=ExtResource("30_645g1")]
+transform = Transform3D(0.050004, 0, 0.000405759, 0, 13.3333, 0, 0.000290047, 0, 0.079996, 0.441015, 15.5463, -5.10313)
+
+[node name="fence_mini48" parent="scene objects/fence" instance=ExtResource("30_645g1")]
+transform = Transform3D(0.050004, 0, 0.000405759, 0, 13.3333, 0, 0.000290047, 0, 0.079996, 0.438971, 15.5463, -5.60479)
+
+[node name="fence_mini49" parent="scene objects/fence" instance=ExtResource("30_645g1")]
+transform = Transform3D(0.050004, 0, 0.000405759, 0, 13.3333, 0, 0.000290047, 0, 0.079996, 0.439958, 15.5463, -6.10389)
+
+[node name="fence_mini50" parent="scene objects/fence" instance=ExtResource("30_645g1")]
+transform = Transform3D(0.050004, 0, 0.000405759, 0, 13.3333, 0, 0.000290047, 0, 0.079996, 0.440431, 15.5463, -6.60078)
+
+[node name="fence_mini51" parent="scene objects/fence" instance=ExtResource("30_645g1")]
+transform = Transform3D(0.050004, 0, 0.000405759, 0, 13.3333, 0, 0.000290047, 0, 0.079996, -0.438511, 15.5463, -0.589783)
+
+[node name="fence_mini52" parent="scene objects/fence" instance=ExtResource("30_645g1")]
+transform = Transform3D(0.050004, 0, 0.000405759, 0, 13.3333, 0, 0.000290047, 0, 0.079996, -0.438039, 15.5463, -1.08667)
+
+[node name="fence_mini53" parent="scene objects/fence" instance=ExtResource("30_645g1")]
+transform = Transform3D(0.050004, 0, 0.000405759, 0, 13.3333, 0, 0.000290047, 0, 0.079996, -0.437665, 15.5463, -1.57997)
+
+[node name="fence_mini54" parent="scene objects/fence" instance=ExtResource("30_645g1")]
+transform = Transform3D(0.050004, 0, 0.000405759, 0, 13.3333, 0, 0.000290047, 0, 0.079996, -0.437193, 15.5463, -2.07686)
+
+[node name="fence_mini64" parent="scene objects/fence" instance=ExtResource("30_645g1")]
+transform = Transform3D(0.050004, 0, 0.000405759, 0, 13.3333, 0, 0.000290047, 0, 0.079996, 0.439013, 15.5463, 2.40929)
+
+[node name="fence_mini65" parent="scene objects/fence" instance=ExtResource("30_645g1")]
+transform = Transform3D(0.050004, 0, 0.000405759, 0, 13.3333, 0, 0.000290047, 0, 0.079996, 0.439485, 15.5463, 1.9124)
+
+[node name="fence_mini66" parent="scene objects/fence" instance=ExtResource("30_645g1")]
+transform = Transform3D(0.050004, 0, 0.000405759, 0, 13.3333, 0, 0.000290047, 0, 0.079996, 0.439859, 15.5463, 1.4191)
+
+[node name="fence_mini67" parent="scene objects/fence" instance=ExtResource("30_645g1")]
+transform = Transform3D(0.050004, 0, 0.000405759, 0, 13.3333, 0, 0.000290047, 0, 0.079996, 0.440331, 15.5463, 0.922212)
+
+[node name="fence_mini68" parent="scene objects/fence" instance=ExtResource("30_645g1")]
+transform = Transform3D(0.050004, 0, 0.000405759, 0, 13.3333, 0, 0.000290047, 0, 0.079996, -0.43644, 15.5463, 2.45335)
+
+[node name="fence_mini69" parent="scene objects/fence" instance=ExtResource("30_645g1")]
+transform = Transform3D(0.050004, 0, 0.000405759, 0, 13.3333, 0, 0.000290047, 0, 0.079996, -0.435969, 15.5463, 1.95646)
+
+[node name="fence_mini70" parent="scene objects/fence" instance=ExtResource("30_645g1")]
+transform = Transform3D(0.050004, 0, 0.000405759, 0, 13.3333, 0, 0.000290047, 0, 0.079996, -0.435594, 15.5463, 1.46316)
+
+[node name="fence_mini71" parent="scene objects/fence" instance=ExtResource("30_645g1")]
+transform = Transform3D(0.050004, 0, 0.000405759, 0, 13.3333, 0, 0.000290047, 0, 0.079996, -0.435122, 15.5463, 0.966273)
+
+[node name="fence_mini55" parent="scene objects/fence" instance=ExtResource("30_645g1")]
+transform = Transform3D(0.050004, 0, 0.000405759, 0, 13.3333, 0, 0.000290047, 0, 0.079996, -0.436206, 15.5463, -2.57596)
+
+[node name="fence_mini56" parent="scene objects/fence" instance=ExtResource("30_645g1")]
+transform = Transform3D(0.050004, 0, 0.000405759, 0, 13.3333, 0, 0.000290047, 0, 0.079996, -0.435732, 15.5463, -3.07285)
+
+[node name="fence_mini57" parent="scene objects/fence" instance=ExtResource("30_645g1")]
+transform = Transform3D(0.050004, 0, 0.000405759, 0, 13.3333, 0, 0.000290047, 0, 0.079996, -0.436372, 15.5463, -3.56619)
+
+[node name="fence_mini58" parent="scene objects/fence" instance=ExtResource("30_645g1")]
+transform = Transform3D(0.050004, 0, 0.000405759, 0, 13.3333, 0, 0.000290047, 0, 0.079996, -0.435899, 15.5463, -4.06308)
+
+[node name="fence_mini59" parent="scene objects/fence" instance=ExtResource("30_645g1")]
+transform = Transform3D(0.050004, 0, 0.000405759, 0, 13.3333, 0, 0.000290047, 0, 0.079996, -0.434911, 15.5463, -4.56218)
+
+[node name="fence_mini60" parent="scene objects/fence" instance=ExtResource("30_645g1")]
+transform = Transform3D(0.050004, 0, 0.000405759, 0, 13.3333, 0, 0.000290047, 0, 0.079996, -0.434439, 15.5463, -5.05907)
+
+[node name="fence_mini61" parent="scene objects/fence" instance=ExtResource("30_645g1")]
+transform = Transform3D(0.050004, 0, 0.000405759, 0, 13.3333, 0, 0.000290047, 0, 0.079996, -0.436483, 15.5463, -5.56073)
+
+[node name="fence_mini62" parent="scene objects/fence" instance=ExtResource("30_645g1")]
+transform = Transform3D(0.050004, 0, 0.000405759, 0, 13.3333, 0, 0.000290047, 0, 0.079996, -0.435495, 15.5463, -6.05983)
+
+[node name="fence_mini63" parent="scene objects/fence" instance=ExtResource("30_645g1")]
+transform = Transform3D(0.050004, 0, 0.000405759, 0, 13.3333, 0, 0.000290047, 0, 0.079996, -0.435023, 15.5463, -6.55672)
+
+[node name="fence_mini20" parent="scene objects/fence" instance=ExtResource("30_645g1")]
+transform = Transform3D(0.050004, 0, 0.000405759, 0, 13.3333, 0, 0.000290047, 0, 0.079996, -1.21652, 15.5463, 2.1514)
+
+[node name="fence_mini21" parent="scene objects/fence" instance=ExtResource("30_645g1")]
+transform = Transform3D(0.050004, 0, 0.000405759, 0, 13.3333, 0, 0.000290047, 0, 0.079996, -1.21605, 15.5463, 1.65451)
+
+[node name="fence_mini22" parent="scene objects/fence" instance=ExtResource("30_645g1")]
+transform = Transform3D(0.050004, 0, 0.000405759, 0, 13.3333, 0, 0.000290047, 0, 0.079996, -1.21506, 15.5463, 1.15541)
+
+[node name="fence_mini23" parent="scene objects/fence" instance=ExtResource("30_645g1")]
+transform = Transform3D(0.050004, 0, 0.000405759, 0, 13.3333, 0, 0.000290047, 0, 0.079996, -1.21459, 15.5463, 0.658528)
+
+[node name="fence_mini24" parent="scene objects/fence" instance=ExtResource("30_645g1")]
+transform = Transform3D(0.050004, 0, 0.000405759, 0, 13.3333, 0, 0.000290047, 0, 0.079996, -1.21523, 15.5463, 0.165185)
+
+[node name="fence_mini25" parent="scene objects/fence" instance=ExtResource("30_645g1")]
+transform = Transform3D(0.050004, 0, 0.000405759, 0, 13.3333, 0, 0.000290047, 0, 0.079996, -1.21476, 15.5463, -0.331705)
+
+[node name="fence_mini27" parent="scene objects/fence" instance=ExtResource("30_645g1")]
+transform = Transform3D(0.050004, 0, 0.000405759, 0, 13.3333, 0, 0.000290047, 0, 0.079996, -3.06998, 15.5463, -1.34701)
+
+[node name="fence_mini39" parent="scene objects/fence" instance=ExtResource("30_645g1")]
+transform = Transform3D(0.050004, 0, 0.000405759, 0, 13.3333, 0, 0.000290047, 0, 0.079996, -3.06723, 15.5463, -0.849991)
+
+[node name="fence_mini28" parent="scene objects/fence" instance=ExtResource("30_645g1")]
+transform = Transform3D(0.050004, 0, 0.000405759, 0, 13.3333, 0, 0.000290047, 0, 0.079996, -3.06961, 15.5463, -1.8403)
+
+[node name="fence_mini29" parent="scene objects/fence" instance=ExtResource("30_645g1")]
+transform = Transform3D(0.050004, 0, 0.000405759, 0, 13.3333, 0, 0.000290047, 0, 0.079996, -3.06913, 15.5463, -2.33719)
+
+[node name="fence_mini30" parent="scene objects/fence" instance=ExtResource("30_645g1")]
+transform = Transform3D(0.050004, 0, 0.000405759, 0, 13.3333, 0, 0.000290047, 0, 0.079996, -3.06815, 15.5463, -2.83629)
+
+[node name="fence_mini31" parent="scene objects/fence" instance=ExtResource("30_645g1")]
+transform = Transform3D(0.050004, 0, 0.000405759, 0, 13.3333, 0, 0.000290047, 0, 0.079996, -3.06767, 15.5463, -3.33318)
+
+[node name="fence_mini32" parent="scene objects/fence" instance=ExtResource("30_645g1")]
+transform = Transform3D(0.050004, 0, 0.000405759, 0, 13.3333, 0, 0.000290047, 0, 0.079996, -1.21686, 15.5463, -3.87893)
+
+[node name="fence_mini33" parent="scene objects/fence" instance=ExtResource("30_645g1")]
+transform = Transform3D(0.050004, 0, 0.000405759, 0, 13.3333, 0, 0.000290047, 0, 0.079996, -1.21639, 15.5463, -4.37582)
+
+[node name="fence_mini34" parent="scene objects/fence" instance=ExtResource("30_645g1")]
+transform = Transform3D(0.050004, 0, 0.000405759, 0, 13.3333, 0, 0.000290047, 0, 0.079996, -1.2154, 15.5463, -4.87492)
+
+[node name="fence_mini35" parent="scene objects/fence" instance=ExtResource("30_645g1")]
+transform = Transform3D(0.050004, 0, 0.000405759, 0, 13.3333, 0, 0.000290047, 0, 0.079996, -1.21493, 15.5463, -5.37181)
+
+[node name="fence_mini36" parent="scene objects/fence" instance=ExtResource("30_645g1")]
+transform = Transform3D(0.050004, 0, 0.000405759, 0, 13.3333, 0, 0.000290047, 0, 0.079996, -1.21697, 15.5463, -5.87347)
+
+[node name="fence_mini72" parent="scene objects/fence" instance=ExtResource("30_645g1")]
+transform = Transform3D(0.0327595, 0, 0.038157, 0, 13.3333, 0, -0.0604464, 0, 0.0516965, -1.32862, 15.5463, -6.78079)
+
+[node name="fence_mini73" parent="scene objects/fence" instance=ExtResource("30_645g1")]
+transform = Transform3D(0.000696169, 0, 0.049999, 0, 13.3333, 0, -0.0799992, 0, 0.000174541, -1.36517, 15.5463, -0.58763)
+
+[node name="fence_mini74" parent="scene objects/fence" instance=ExtResource("30_645g1")]
+transform = Transform3D(0.000696169, 0, 0.049999, 0, 13.3333, 0, -0.0799992, 0, 0.000174541, -1.67161, 15.5463, -0.58918)
+
+[node name="fence_mini75" parent="scene objects/fence" instance=ExtResource("30_645g1")]
+transform = Transform3D(0.000696169, 0, 0.049999, 0, 13.3333, 0, -0.0799992, 0, 0.000174541, -1.98273, 15.5463, -0.588126)
+
+[node name="fence_mini76" parent="scene objects/fence" instance=ExtResource("30_645g1")]
+transform = Transform3D(-0.000382507, 0, 0.0499897, 0, 13.3333, 0, -0.0800047, 0, -0.00155111, 0.302268, 15.5463, -0.349732)
+
+[node name="fence_mini77" parent="scene objects/fence" instance=ExtResource("30_645g1")]
+transform = Transform3D(-0.000382507, 0, 0.0499897, 0, 13.3333, 0, -0.0800047, 0, -0.00155111, -0.00411958, 15.5463, -0.340705)
+
+[node name="fence_mini78" parent="scene objects/fence" instance=ExtResource("30_645g1")]
+transform = Transform3D(-0.000382507, 0, 0.0499897, 0, 13.3333, 0, -0.0800047, 0, -0.00155111, -0.315152, 15.5463, -0.328914)
+
+[node name="fence_mini79" parent="scene objects/fence" instance=ExtResource("30_645g1")]
+transform = Transform3D(-0.000382507, 0, 0.0499897, 0, 13.3333, 0, -0.0800047, 0, -0.00155111, 0.30588, 15.5463, -6.84151)
+
+[node name="fence_mini80" parent="scene objects/fence" instance=ExtResource("30_645g1")]
+transform = Transform3D(-0.000382507, 0, 0.0499897, 0, 13.3333, 0, -0.0800047, 0, -0.00155111, -0.000507474, 15.5463, -6.83248)
+
+[node name="fence_mini81" parent="scene objects/fence" instance=ExtResource("30_645g1")]
+transform = Transform3D(-0.000382507, 0, 0.0499897, 0, 13.3333, 0, -0.0800047, 0, -0.00155111, -0.31154, 15.5463, -6.82069)
+
+[node name="fence_mini97" parent="scene objects/fence" instance=ExtResource("30_645g1")]
+transform = Transform3D(0.00141174, 0, 0.0500119, 0, 13.3334, 0, -0.0799931, 0, -0.000429668, 2.01063, 15.5463, -6.91984)
+
+[node name="fence_mini98" parent="scene objects/fence" instance=ExtResource("30_645g1")]
+transform = Transform3D(0.00141174, 0, 0.0500119, 0, 13.3334, 0, -0.0799931, 0, -0.000429668, 1.70419, 15.5463, -6.92181)
+
+[node name="fence_mini99" parent="scene objects/fence" instance=ExtResource("30_645g1")]
+transform = Transform3D(0.00141174, 0, 0.0500119, 0, 13.3334, 0, -0.0799931, 0, -0.000429668, 1.39308, 15.5463, -6.92118)
+
+[node name="fence_mini100" parent="scene objects/fence" instance=ExtResource("30_645g1")]
+transform = Transform3D(0.00141174, 0, 0.0500119, 0, 13.3334, 0, -0.0799931, 0, -0.000429671, 2.93983, 15.5463, -6.92638)
+
+[node name="fence_mini101" parent="scene objects/fence" instance=ExtResource("30_645g1")]
+transform = Transform3D(0.00141174, 0, 0.0500119, 0, 13.3334, 0, -0.0799931, 0, -0.000429671, 2.63339, 15.5463, -6.92835)
+
+[node name="fence_mini102" parent="scene objects/fence" instance=ExtResource("30_645g1")]
+transform = Transform3D(0.00141174, 0, 0.0500119, 0, 13.3334, 0, -0.0799931, 0, -0.000429671, 2.32227, 15.5463, -6.92773)
+
+[node name="fence_mini103" parent="scene objects/fence" instance=ExtResource("30_645g1")]
+transform = Transform3D(0.00141174, 0, 0.0500119, 0, 13.3334, 0, -0.0799931, 0, -0.000429671, 3.86734, 15.5463, -6.91977)
+
+[node name="fence_mini104" parent="scene objects/fence" instance=ExtResource("30_645g1")]
+transform = Transform3D(0.00141174, 0, 0.0500119, 0, 13.3334, 0, -0.0799931, 0, -0.000429671, 3.5609, 15.5463, -6.92173)
+
+[node name="fence_mini105" parent="scene objects/fence" instance=ExtResource("30_645g1")]
+transform = Transform3D(0.00141174, 0, 0.0500119, 0, 13.3334, 0, -0.0799931, 0, -0.000429671, 3.24978, 15.5463, -6.92111)
+
+[node name="fence_mini106" parent="scene objects/fence" instance=ExtResource("30_645g1")]
+transform = Transform3D(0.00141174, 0, 0.0500119, 0, 13.3334, 0, -0.0799931, 0, -0.000429671, 4.79654, 15.5463, -6.92631)
+
+[node name="fence_mini107" parent="scene objects/fence" instance=ExtResource("30_645g1")]
+transform = Transform3D(0.00141174, 0, 0.0500119, 0, 13.3334, 0, -0.0799931, 0, -0.000429671, 4.4901, 15.5463, -6.92828)
+
+[node name="fence_mini108" parent="scene objects/fence" instance=ExtResource("30_645g1")]
+transform = Transform3D(0.00141174, 0, 0.0500119, 0, 13.3334, 0, -0.0799931, 0, -0.000429671, 4.17898, 15.5463, -6.92766)
+
+[node name="fence_mini82" parent="scene objects/fence" instance=ExtResource("30_645g1")]
+transform = Transform3D(-0.000382507, 0, 0.0499897, 0, 13.3333, 0, -0.0800047, 0, -0.00155111, 0.301654, 15.5463, 2.68314)
+
+[node name="fence_mini83" parent="scene objects/fence" instance=ExtResource("30_645g1")]
+transform = Transform3D(-0.000382507, 0, 0.0499897, 0, 13.3333, 0, -0.0800047, 0, -0.00155111, -0.00473285, 15.5463, 2.69216)
+
+[node name="fence_mini84" parent="scene objects/fence" instance=ExtResource("30_645g1")]
+transform = Transform3D(-0.000382507, 0, 0.0499897, 0, 13.3333, 0, -0.0800047, 0, -0.00155111, -0.315765, 15.5463, 2.70395)
+
+[node name="fence_mini85" parent="scene objects/fence" instance=ExtResource("30_645g1")]
+transform = Transform3D(-0.000591952, 0, 0.0499956, 0, 13.3333, 0, -0.0800014, 0, -0.000947025, 0.306664, 15.5463, 0.703711)
+
+[node name="fence_mini86" parent="scene objects/fence" instance=ExtResource("30_645g1")]
+transform = Transform3D(-0.000591952, 0, 0.0499956, 0, 13.3333, 0, -0.0800014, 0, -0.000947025, 0.000303745, 15.5463, 0.714791)
+
+[node name="fence_mini87" parent="scene objects/fence" instance=ExtResource("30_645g1")]
+transform = Transform3D(-0.000591952, 0, 0.0499956, 0, 13.3333, 0, -0.0800014, 0, -0.000947025, -0.310695, 15.5463, 0.728666)
+
+[node name="fence_mini88" parent="scene objects/fence" instance=ExtResource("30_645g1")]
+transform = Transform3D(0.000696169, 0, 0.049999, 0, 13.3333, 0, -0.0799992, 0, 0.000174541, -2.28916, 15.5463, -0.589676)
+
+[node name="fence_mini89" parent="scene objects/fence" instance=ExtResource("30_645g1")]
+transform = Transform3D(0.000696169, 0, 0.049999, 0, 13.3333, 0, -0.0799992, 0, 0.000174541, -2.59462, 15.5463, -0.585027)
+
+[node name="fence_mini90" parent="scene objects/fence" instance=ExtResource("30_645g1")]
+transform = Transform3D(0.000696169, 0, 0.049999, 0, 13.3333, 0, -0.0799992, 0, 0.000174541, -2.90106, 15.5463, -0.586577)
+
+[node name="fence_mini91" parent="scene objects/fence" instance=ExtResource("30_645g1")]
+transform = Transform3D(0.000299964, 0, 0.0499983, 0, 13.3333, 0, -0.0800056, 0, -0.000459339, -1.37102, 15.5463, -3.62501)
+
+[node name="fence_mini92" parent="scene objects/fence" instance=ExtResource("30_645g1")]
+transform = Transform3D(0.000299964, 0, 0.0499983, 0, 13.3333, 0, -0.0800056, 0, -0.000459339, -1.67746, 15.5463, -3.62268)
+
+[node name="fence_mini93" parent="scene objects/fence" instance=ExtResource("30_645g1")]
+transform = Transform3D(0.000299964, 0, 0.0499983, 0, 13.3333, 0, -0.0800056, 0, -0.000459339, -1.98856, 15.5463, -3.61768)
+
+[node name="fence_mini94" parent="scene objects/fence" instance=ExtResource("30_645g1")]
+transform = Transform3D(0.000299964, 0, 0.0499983, 0, 13.3333, 0, -0.0800056, 0, -0.000459339, -2.295, 15.5463, -3.61535)
+
+[node name="fence_mini95" parent="scene objects/fence" instance=ExtResource("30_645g1")]
+transform = Transform3D(0.000299964, 0, 0.0499983, 0, 13.3333, 0, -0.0800056, 0, -0.000459339, -2.60042, 15.5463, -3.60682)
+
+[node name="fence_mini96" parent="scene objects/fence" instance=ExtResource("30_645g1")]
+transform = Transform3D(0.000299964, 0, 0.0499983, 0, 13.3333, 0, -0.0800056, 0, -0.000459339, -2.90686, 15.5463, -3.60449)
+
+[node name="fence_mini37" parent="scene objects/fence" instance=ExtResource("30_645g1")]
+transform = Transform3D(0.050004, 0, 0.000405759, 0, 13.3333, 0, 0.000290047, 0, 0.079996, -1.21598, 15.5463, -6.37256)
+
+[node name="Houseblocks" type="Node3D" parent="scene objects"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="woods" type="Node3D" parent="scene objects"]
+transform = Transform3D(0.0883884, 0, 0.0883884, 0, 33.3333, 0, -0.141422, 0, 0.141422, -0.623598, 0, -4.52622)
+
+[node name="wood" type="Node3D" parent="scene objects/woods"]
+transform = Transform3D(-0.794273, 0, -0.0955551, 0, 0.8, 0, 0.0955551, 0, -0.794273, -20.5742, 0, 10.4896)
+
+[node name="tree_foliage" parent="scene objects/woods/wood" instance=ExtResource("31_hqpcx")]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -0.966957, 8.82039, -0.712399)
+
+[node name="tree_foliage2" parent="scene objects/woods/wood" instance=ExtResource("31_hqpcx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8747, 5.21214, -0.712399)
+
+[node name="tree_foliage3" parent="scene objects/woods/wood" instance=ExtResource("31_hqpcx")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -1.54713, 4.61722, -0.341224)
+
+[node name="tree_wood" parent="scene objects/woods/wood" instance=ExtResource("32_vdo5r")]
+
+[node name="wood17" type="Node3D" parent="scene objects/woods"]
+transform = Transform3D(-0.794273, 0, -0.0955551, 0, 0.8, 0, 0.0955551, 0, -0.794273, -26.269, 0, -2.72278)
+
+[node name="tree_foliage" parent="scene objects/woods/wood17" instance=ExtResource("31_hqpcx")]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -0.966957, 8.82039, -0.712399)
+
+[node name="tree_foliage2" parent="scene objects/woods/wood17" instance=ExtResource("31_hqpcx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8747, 5.21214, -0.712399)
+
+[node name="tree_foliage3" parent="scene objects/woods/wood17" instance=ExtResource("31_hqpcx")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -1.54713, 4.61722, -0.341224)
+
+[node name="tree_wood" parent="scene objects/woods/wood17" instance=ExtResource("32_vdo5r")]
+
+[node name="wood18" type="Node3D" parent="scene objects/woods"]
+transform = Transform3D(-0.217569, 0, -0.769847, 0, 0.8, 0, 0.769847, 0, -0.217569, -19.4428, 0, -10.0561)
+
+[node name="tree_foliage" parent="scene objects/woods/wood18" instance=ExtResource("31_hqpcx")]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -0.966957, 8.82039, -0.712399)
+
+[node name="tree_foliage2" parent="scene objects/woods/wood18" instance=ExtResource("31_hqpcx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8747, 5.21214, -0.712399)
+
+[node name="tree_foliage3" parent="scene objects/woods/wood18" instance=ExtResource("31_hqpcx")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -1.54713, 4.61722, -0.341224)
+
+[node name="tree_wood" parent="scene objects/woods/wood18" instance=ExtResource("32_vdo5r")]
+
+[node name="wood19" type="Node3D" parent="scene objects/woods"]
+transform = Transform3D(0.627085, 0, -0.496754, 0, 0.8, 0, 0.496754, 0, 0.627085, -12.3915, 0, -10.0561)
+
+[node name="tree_foliage" parent="scene objects/woods/wood19" instance=ExtResource("31_hqpcx")]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -0.966957, 8.82039, -0.712399)
+
+[node name="tree_foliage2" parent="scene objects/woods/wood19" instance=ExtResource("31_hqpcx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8747, 5.21214, -0.712399)
+
+[node name="tree_foliage3" parent="scene objects/woods/wood19" instance=ExtResource("31_hqpcx")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -1.54713, 4.61722, -0.341224)
+
+[node name="tree_wood" parent="scene objects/woods/wood19" instance=ExtResource("32_vdo5r")]
+
+[node name="wood3" type="Node3D" parent="scene objects/woods"]
+transform = Transform3D(0.14841, 0, 0.786114, 0, 0.8, 0, -0.786114, 0, 0.14841, -27.1046, 0, 17.6912)
+
+[node name="tree_foliage" parent="scene objects/woods/wood3" instance=ExtResource("31_hqpcx")]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -0.966957, 8.82039, -0.712399)
+
+[node name="tree_foliage2" parent="scene objects/woods/wood3" instance=ExtResource("31_hqpcx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8747, 5.21214, -0.712399)
+
+[node name="tree_foliage3" parent="scene objects/woods/wood3" instance=ExtResource("31_hqpcx")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -1.54713, 4.61722, -0.341224)
+
+[node name="tree_wood" parent="scene objects/woods/wood3" instance=ExtResource("32_vdo5r")]
+
+[node name="wood2" type="Node3D" parent="scene objects/woods"]
+transform = Transform3D(0.523963, 0, -0.292341, 0, 0.6, 0, 0.292341, 0, 0.523963, -24.0773, 0, 14.7914)
+
+[node name="tree_foliage" parent="scene objects/woods/wood2" instance=ExtResource("31_hqpcx")]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -0.966957, 8.82039, -0.712399)
+
+[node name="tree_foliage2" parent="scene objects/woods/wood2" instance=ExtResource("31_hqpcx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8747, 5.21214, -0.712399)
+
+[node name="tree_foliage3" parent="scene objects/woods/wood2" instance=ExtResource("31_hqpcx")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -1.54713, 4.61722, -0.341224)
+
+[node name="tree_wood" parent="scene objects/woods/wood2" instance=ExtResource("32_vdo5r")]
+
+[node name="wood31" type="Node3D" parent="scene objects/woods"]
+transform = Transform3D(-0.794273, 0, -0.0955551, 0, 0.8, 0, 0.0955551, 0, -0.794273, 60.99, 0, 13.4525)
+
+[node name="tree_foliage" parent="scene objects/woods/wood31" instance=ExtResource("31_hqpcx")]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -0.966957, 8.82039, -0.712399)
+
+[node name="tree_foliage2" parent="scene objects/woods/wood31" instance=ExtResource("31_hqpcx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8747, 5.21214, -0.712399)
+
+[node name="tree_foliage3" parent="scene objects/woods/wood31" instance=ExtResource("31_hqpcx")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -1.54713, 4.61722, -0.341224)
+
+[node name="tree_wood" parent="scene objects/woods/wood31" instance=ExtResource("32_vdo5r")]
+
+[node name="wood32" type="Node3D" parent="scene objects/woods"]
+transform = Transform3D(0.14841, 0, 0.786114, 0, 0.8, 0, -0.786114, 0, 0.14841, 54.4596, 0, 20.6541)
+
+[node name="tree_foliage" parent="scene objects/woods/wood32" instance=ExtResource("31_hqpcx")]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -0.966957, 8.82039, -0.712399)
+
+[node name="tree_foliage2" parent="scene objects/woods/wood32" instance=ExtResource("31_hqpcx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8747, 5.21214, -0.712399)
+
+[node name="tree_foliage3" parent="scene objects/woods/wood32" instance=ExtResource("31_hqpcx")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -1.54713, 4.61722, -0.341224)
+
+[node name="tree_wood" parent="scene objects/woods/wood32" instance=ExtResource("32_vdo5r")]
+
+[node name="wood33" type="Node3D" parent="scene objects/woods"]
+transform = Transform3D(0.523963, 0, -0.292341, 0, 0.6, 0, 0.292341, 0, 0.523963, 57.4869, 0, 17.7544)
+
+[node name="tree_foliage" parent="scene objects/woods/wood33" instance=ExtResource("31_hqpcx")]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -0.966957, 8.82039, -0.712399)
+
+[node name="tree_foliage2" parent="scene objects/woods/wood33" instance=ExtResource("31_hqpcx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8747, 5.21214, -0.712399)
+
+[node name="tree_foliage3" parent="scene objects/woods/wood33" instance=ExtResource("31_hqpcx")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -1.54713, 4.61722, -0.341224)
+
+[node name="tree_wood" parent="scene objects/woods/wood33" instance=ExtResource("32_vdo5r")]
+
+[node name="wood4" type="Node3D" parent="scene objects/woods"]
+transform = Transform3D(-0.794273, 0, -0.0955551, 0, 0.8, 0, 0.0955551, 0, -0.794273, 2.20635, 0, -11.577)
+
+[node name="tree_foliage" parent="scene objects/woods/wood4" instance=ExtResource("31_hqpcx")]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -0.966957, 8.82039, -0.712399)
+
+[node name="tree_foliage2" parent="scene objects/woods/wood4" instance=ExtResource("31_hqpcx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8747, 5.21214, -0.712399)
+
+[node name="tree_foliage3" parent="scene objects/woods/wood4" instance=ExtResource("31_hqpcx")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -1.54713, 4.61722, -0.341224)
+
+[node name="tree_wood" parent="scene objects/woods/wood4" instance=ExtResource("32_vdo5r")]
+
+[node name="wood28" type="Node3D" parent="scene objects/woods"]
+transform = Transform3D(-0.794273, 0, -0.0955551, 0, 0.8, 0, 0.0955551, 0, -0.794273, 7.6304, 0, -31.1216)
+
+[node name="tree_foliage" parent="scene objects/woods/wood28" instance=ExtResource("31_hqpcx")]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -0.966957, 8.82039, -0.712399)
+
+[node name="tree_foliage2" parent="scene objects/woods/wood28" instance=ExtResource("31_hqpcx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8747, 5.21214, -0.712399)
+
+[node name="tree_foliage3" parent="scene objects/woods/wood28" instance=ExtResource("31_hqpcx")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -1.54713, 4.61722, -0.341224)
+
+[node name="tree_wood" parent="scene objects/woods/wood28" instance=ExtResource("32_vdo5r")]
+
+[node name="wood29" type="Node3D" parent="scene objects/woods"]
+transform = Transform3D(-0.721858, 0, 0.34485, 0, 0.8, 0, -0.34485, 0, -0.721858, 40.3397, 0, -5.72438)
+
+[node name="tree_foliage" parent="scene objects/woods/wood29" instance=ExtResource("31_hqpcx")]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -0.966957, 8.82039, -0.712399)
+
+[node name="tree_foliage2" parent="scene objects/woods/wood29" instance=ExtResource("31_hqpcx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8747, 5.21214, -0.712399)
+
+[node name="tree_foliage3" parent="scene objects/woods/wood29" instance=ExtResource("31_hqpcx")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -1.54713, 4.61722, -0.341224)
+
+[node name="tree_wood" parent="scene objects/woods/wood29" instance=ExtResource("32_vdo5r")]
+
+[node name="wood30" type="Node3D" parent="scene objects/woods"]
+transform = Transform3D(0.377265, 0, -0.705458, 0, 0.8, 0, 0.705458, 0, 0.377265, 45.0508, 0, -0.949489)
+
+[node name="tree_foliage" parent="scene objects/woods/wood30" instance=ExtResource("31_hqpcx")]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -0.966957, 8.82039, -0.712399)
+
+[node name="tree_foliage2" parent="scene objects/woods/wood30" instance=ExtResource("31_hqpcx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8747, 5.21214, -0.712399)
+
+[node name="tree_foliage3" parent="scene objects/woods/wood30" instance=ExtResource("31_hqpcx")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -1.54713, 4.61722, -0.341224)
+
+[node name="tree_wood" parent="scene objects/woods/wood30" instance=ExtResource("32_vdo5r")]
+
+[node name="wood7" type="Node3D" parent="scene objects/woods"]
+transform = Transform3D(-0.794273, 0, -0.0955551, 0, 0.8, 0, 0.0955551, 0, -0.794273, 18.6664, 0, 7.84264)
+
+[node name="tree_foliage" parent="scene objects/woods/wood7" instance=ExtResource("31_hqpcx")]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -0.966957, 8.82039, -0.712399)
+
+[node name="tree_foliage2" parent="scene objects/woods/wood7" instance=ExtResource("31_hqpcx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8747, 5.21214, -0.712399)
+
+[node name="tree_foliage3" parent="scene objects/woods/wood7" instance=ExtResource("31_hqpcx")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -1.54713, 4.61722, -0.341224)
+
+[node name="tree_wood" parent="scene objects/woods/wood7" instance=ExtResource("32_vdo5r")]
+
+[node name="wood8" type="Node3D" parent="scene objects/woods"]
+transform = Transform3D(0.736578, 0, -0.312174, 0, 0.8, 0, 0.312174, 0, 0.736578, 13.2234, 0, 13.2413)
+
+[node name="tree_foliage" parent="scene objects/woods/wood8" instance=ExtResource("31_hqpcx")]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -0.966957, 8.82039, -0.712399)
+
+[node name="tree_foliage2" parent="scene objects/woods/wood8" instance=ExtResource("31_hqpcx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8747, 5.21214, -0.712399)
+
+[node name="tree_foliage3" parent="scene objects/woods/wood8" instance=ExtResource("31_hqpcx")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -1.54713, 4.61722, -0.341224)
+
+[node name="tree_wood" parent="scene objects/woods/wood8" instance=ExtResource("32_vdo5r")]
+
+[node name="wood5" type="Node3D" parent="scene objects/woods"]
+transform = Transform3D(0.14841, 0, 0.786114, 0, 0.8, 0, -0.786114, 0, 0.14841, -4.32411, 0, -4.37537)
+
+[node name="tree_foliage" parent="scene objects/woods/wood5" instance=ExtResource("31_hqpcx")]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -0.966957, 8.82039, -0.712399)
+
+[node name="tree_foliage2" parent="scene objects/woods/wood5" instance=ExtResource("31_hqpcx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8747, 5.21214, -0.712399)
+
+[node name="tree_foliage3" parent="scene objects/woods/wood5" instance=ExtResource("31_hqpcx")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -1.54713, 4.61722, -0.341224)
+
+[node name="tree_wood" parent="scene objects/woods/wood5" instance=ExtResource("32_vdo5r")]
+
+[node name="wood6" type="Node3D" parent="scene objects/woods"]
+transform = Transform3D(0.523963, 0, -0.292341, 0, 0.6, 0, 0.292341, 0, 0.523963, -1.29682, 0, -7.27509)
+
+[node name="tree_foliage" parent="scene objects/woods/wood6" instance=ExtResource("31_hqpcx")]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -0.966957, 8.82039, -0.712399)
+
+[node name="tree_foliage2" parent="scene objects/woods/wood6" instance=ExtResource("31_hqpcx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8747, 5.21214, -0.712399)
+
+[node name="tree_foliage3" parent="scene objects/woods/wood6" instance=ExtResource("31_hqpcx")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -1.54713, 4.61722, -0.341224)
+
+[node name="tree_wood" parent="scene objects/woods/wood6" instance=ExtResource("32_vdo5r")]
+
+[node name="wood9" type="Node3D" parent="scene objects/woods"]
+transform = Transform3D(0.349308, 0, -0.194894, 0, 0.4, 0, 0.194894, 0, 0.349308, -33.4431, 0, -7.27509)
+
+[node name="tree_foliage" parent="scene objects/woods/wood9" instance=ExtResource("31_hqpcx")]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -0.966957, 8.82039, -0.712399)
+
+[node name="tree_foliage2" parent="scene objects/woods/wood9" instance=ExtResource("31_hqpcx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8747, 5.21214, -0.712399)
+
+[node name="tree_foliage3" parent="scene objects/woods/wood9" instance=ExtResource("31_hqpcx")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -1.54713, 4.61722, -0.341224)
+
+[node name="tree_wood" parent="scene objects/woods/wood9" instance=ExtResource("32_vdo5r")]
+
+[node name="wood10" type="Node3D" parent="scene objects/woods"]
+transform = Transform3D(0.415512, 0, 0.278119, 0, 0.5, 0, -0.278119, 0, 0.415512, -28.6289, 0, -7.90968)
+
+[node name="tree_foliage" parent="scene objects/woods/wood10" instance=ExtResource("31_hqpcx")]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -0.966957, 8.82039, -0.712399)
+
+[node name="tree_foliage2" parent="scene objects/woods/wood10" instance=ExtResource("31_hqpcx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8747, 5.21214, -0.712399)
+
+[node name="tree_foliage3" parent="scene objects/woods/wood10" instance=ExtResource("31_hqpcx")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -1.54713, 4.61722, -0.341224)
+
+[node name="tree_wood" parent="scene objects/woods/wood10" instance=ExtResource("32_vdo5r")]
+
+[node name="wood11" type="Node3D" parent="scene objects/woods"]
+transform = Transform3D(0.0451945, 0, 0.497953, 0, 0.5, 0, -0.497953, 0, 0.0451945, -27.43, 0, -12.6453)
+
+[node name="tree_foliage" parent="scene objects/woods/wood11" instance=ExtResource("31_hqpcx")]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -0.966957, 8.82039, -0.712399)
+
+[node name="tree_foliage2" parent="scene objects/woods/wood11" instance=ExtResource("31_hqpcx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8747, 5.21214, -0.712399)
+
+[node name="tree_foliage3" parent="scene objects/woods/wood11" instance=ExtResource("31_hqpcx")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -1.54713, 4.61722, -0.341224)
+
+[node name="tree_wood" parent="scene objects/woods/wood11" instance=ExtResource("32_vdo5r")]
+
+[node name="wood12" type="Node3D" parent="scene objects/woods"]
+transform = Transform3D(0.298664, 0, -0.0282846, 0, 0.3, 0, 0.0282846, 0, 0.298664, -23.8492, 0, -16.827)
+
+[node name="tree_foliage" parent="scene objects/woods/wood12" instance=ExtResource("31_hqpcx")]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -0.966957, 8.82039, -0.712399)
+
+[node name="tree_foliage2" parent="scene objects/woods/wood12" instance=ExtResource("31_hqpcx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8747, 5.21214, -0.712399)
+
+[node name="tree_foliage3" parent="scene objects/woods/wood12" instance=ExtResource("31_hqpcx")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -1.54713, 4.61722, -0.341224)
+
+[node name="tree_wood" parent="scene objects/woods/wood12" instance=ExtResource("32_vdo5r")]
+
+[node name="wood13" type="Node3D" parent="scene objects/woods"]
+transform = Transform3D(-0.386577, 0, 0.317109, 0, 0.5, 0, -0.317109, 0, -0.386577, -12.9754, 0, -21.2063)
+
+[node name="tree_foliage" parent="scene objects/woods/wood13" instance=ExtResource("31_hqpcx")]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -0.966957, 8.82039, -0.712399)
+
+[node name="tree_foliage2" parent="scene objects/woods/wood13" instance=ExtResource("31_hqpcx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8747, 5.21214, -0.712399)
+
+[node name="tree_foliage3" parent="scene objects/woods/wood13" instance=ExtResource("31_hqpcx")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -1.54713, 4.61722, -0.341224)
+
+[node name="tree_wood" parent="scene objects/woods/wood13" instance=ExtResource("32_vdo5r")]
+
+[node name="wood14" type="Node3D" parent="scene objects/woods"]
+transform = Transform3D(-0.458206, 0, -0.200119, 0, 0.5, 0, 0.200119, 0, -0.458206, -17.8259, 0, -21.4345)
+
+[node name="tree_foliage" parent="scene objects/woods/wood14" instance=ExtResource("31_hqpcx")]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -0.966957, 8.82039, -0.712399)
+
+[node name="tree_foliage2" parent="scene objects/woods/wood14" instance=ExtResource("31_hqpcx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8747, 5.21214, -0.712399)
+
+[node name="tree_foliage3" parent="scene objects/woods/wood14" instance=ExtResource("31_hqpcx")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -1.54713, 4.61722, -0.341224)
+
+[node name="tree_wood" parent="scene objects/woods/wood14" instance=ExtResource("32_vdo5r")]
+
+[node name="wood20" type="Node3D" parent="scene objects/woods"]
+transform = Transform3D(-0.478458, 0, 0.145184, 0, 0.5, 0, -0.145184, 0, -0.478458, -25.3157, 0, -37.7341)
+
+[node name="tree_foliage" parent="scene objects/woods/wood20" instance=ExtResource("31_hqpcx")]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -0.966957, 8.82039, -0.712399)
+
+[node name="tree_foliage2" parent="scene objects/woods/wood20" instance=ExtResource("31_hqpcx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8747, 5.21214, -0.712399)
+
+[node name="tree_foliage3" parent="scene objects/woods/wood20" instance=ExtResource("31_hqpcx")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -1.54713, 4.61722, -0.341224)
+
+[node name="tree_wood" parent="scene objects/woods/wood20" instance=ExtResource("32_vdo5r")]
+
+[node name="wood21" type="Node3D" parent="scene objects/woods"]
+transform = Transform3D(-0.282383, 0, -0.412626, 0, 0.5, 0, 0.412626, 0, -0.282383, -23.1499, 0, -35.8861)
+
+[node name="tree_foliage" parent="scene objects/woods/wood21" instance=ExtResource("31_hqpcx")]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -0.966957, 8.82039, -0.712399)
+
+[node name="tree_foliage2" parent="scene objects/woods/wood21" instance=ExtResource("31_hqpcx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8747, 5.21214, -0.712399)
+
+[node name="tree_foliage3" parent="scene objects/woods/wood21" instance=ExtResource("31_hqpcx")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -1.54713, 4.61722, -0.341224)
+
+[node name="tree_wood" parent="scene objects/woods/wood21" instance=ExtResource("32_vdo5r")]
+
+[node name="wood22" type="Node3D" parent="scene objects/woods"]
+transform = Transform3D(-0.379806, 0, -0.325188, 0, 0.5, 0, 0.325188, 0, -0.379806, -20.4972, 0, -36.0348)
+
+[node name="tree_foliage" parent="scene objects/woods/wood22" instance=ExtResource("31_hqpcx")]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -0.966957, 8.82039, -0.712399)
+
+[node name="tree_foliage2" parent="scene objects/woods/wood22" instance=ExtResource("31_hqpcx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8747, 5.21214, -0.712399)
+
+[node name="tree_foliage3" parent="scene objects/woods/wood22" instance=ExtResource("31_hqpcx")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -1.54713, 4.61722, -0.341224)
+
+[node name="tree_wood" parent="scene objects/woods/wood22" instance=ExtResource("32_vdo5r")]
+
+[node name="wood23" type="Node3D" parent="scene objects/woods"]
+transform = Transform3D(0.19588, 0, -0.460034, 0, 0.5, 0, 0.460034, 0, 0.19588, -17.7743, 0, -36.8661)
+
+[node name="tree_foliage" parent="scene objects/woods/wood23" instance=ExtResource("31_hqpcx")]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -0.966957, 8.82039, -0.712399)
+
+[node name="tree_foliage2" parent="scene objects/woods/wood23" instance=ExtResource("31_hqpcx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8747, 5.21214, -0.712399)
+
+[node name="tree_foliage3" parent="scene objects/woods/wood23" instance=ExtResource("31_hqpcx")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -1.54713, 4.61722, -0.341224)
+
+[node name="tree_wood" parent="scene objects/woods/wood23" instance=ExtResource("32_vdo5r")]
+
+[node name="wood24" type="Node3D" parent="scene objects/woods"]
+transform = Transform3D(0.443243, 0, -0.231377, 0, 0.5, 0, 0.231377, 0, 0.443243, -14.7184, 0, -37.1134)
+
+[node name="tree_foliage" parent="scene objects/woods/wood24" instance=ExtResource("31_hqpcx")]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -0.966957, 8.82039, -0.712399)
+
+[node name="tree_foliage2" parent="scene objects/woods/wood24" instance=ExtResource("31_hqpcx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8747, 5.21214, -0.712399)
+
+[node name="tree_foliage3" parent="scene objects/woods/wood24" instance=ExtResource("31_hqpcx")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -1.54713, 4.61722, -0.341224)
+
+[node name="tree_wood" parent="scene objects/woods/wood24" instance=ExtResource("32_vdo5r")]
+
+[node name="wood25" type="Node3D" parent="scene objects/woods"]
+transform = Transform3D(0.353991, 0, 0.353115, 0, 0.5, 0, -0.353115, 0, 0.353991, -16.504, 0, -39.3309)
+
+[node name="tree_foliage" parent="scene objects/woods/wood25" instance=ExtResource("31_hqpcx")]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -0.966957, 8.82039, -0.712399)
+
+[node name="tree_foliage2" parent="scene objects/woods/wood25" instance=ExtResource("31_hqpcx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8747, 5.21214, -0.712399)
+
+[node name="tree_foliage3" parent="scene objects/woods/wood25" instance=ExtResource("31_hqpcx")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -1.54713, 4.61722, -0.341224)
+
+[node name="tree_wood" parent="scene objects/woods/wood25" instance=ExtResource("32_vdo5r")]
+
+[node name="wood26" type="Node3D" parent="scene objects/woods"]
+transform = Transform3D(0.433514, 0, 0.24913, 0, 0.5, 0, -0.24913, 0, 0.433514, -19.1383, 0, -39.6765)
+
+[node name="tree_foliage" parent="scene objects/woods/wood26" instance=ExtResource("31_hqpcx")]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -0.966957, 8.82039, -0.712399)
+
+[node name="tree_foliage2" parent="scene objects/woods/wood26" instance=ExtResource("31_hqpcx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8747, 5.21214, -0.712399)
+
+[node name="tree_foliage3" parent="scene objects/woods/wood26" instance=ExtResource("31_hqpcx")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -1.54713, 4.61722, -0.341224)
+
+[node name="tree_wood" parent="scene objects/woods/wood26" instance=ExtResource("32_vdo5r")]
+
+[node name="wood27" type="Node3D" parent="scene objects/woods"]
+transform = Transform3D(-0.107189, 0, 0.488376, 0, 0.5, 0, -0.488376, 0, -0.107189, -21.9682, 0, -39.3645)
+
+[node name="tree_foliage" parent="scene objects/woods/wood27" instance=ExtResource("31_hqpcx")]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -0.966957, 8.82039, -0.712399)
+
+[node name="tree_foliage2" parent="scene objects/woods/wood27" instance=ExtResource("31_hqpcx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8747, 5.21214, -0.712399)
+
+[node name="tree_foliage3" parent="scene objects/woods/wood27" instance=ExtResource("31_hqpcx")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -1.54713, 4.61722, -0.341224)
+
+[node name="tree_wood" parent="scene objects/woods/wood27" instance=ExtResource("32_vdo5r")]
+
+[node name="wood15" type="Node3D" parent="scene objects/woods"]
+transform = Transform3D(-0.132685, 0, -0.482073, 0, 0.5, 0, 0.482073, 0, -0.132685, -19.8447, 0, -16.9862)
+
+[node name="tree_foliage" parent="scene objects/woods/wood15" instance=ExtResource("31_hqpcx")]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -0.966957, 8.82039, -0.712399)
+
+[node name="tree_foliage2" parent="scene objects/woods/wood15" instance=ExtResource("31_hqpcx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8747, 5.21214, -0.712399)
+
+[node name="tree_foliage3" parent="scene objects/woods/wood15" instance=ExtResource("31_hqpcx")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -1.54713, 4.61722, -0.341224)
+
+[node name="tree_wood" parent="scene objects/woods/wood15" instance=ExtResource("32_vdo5r")]
+
+[node name="wood16" type="Node3D" parent="scene objects/woods"]
+transform = Transform3D(-0.481551, 0, 0.134569, 0, 0.5, 0, -0.134569, 0, -0.481551, -24.1096, 0, -13.5049)
+
+[node name="tree_foliage" parent="scene objects/woods/wood16" instance=ExtResource("31_hqpcx")]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -0.966957, 8.82039, -0.712399)
+
+[node name="tree_foliage2" parent="scene objects/woods/wood16" instance=ExtResource("31_hqpcx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8747, 5.21214, -0.712399)
+
+[node name="tree_foliage3" parent="scene objects/woods/wood16" instance=ExtResource("31_hqpcx")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -1.54713, 4.61722, -0.341224)
+
+[node name="tree_wood" parent="scene objects/woods/wood16" instance=ExtResource("32_vdo5r")]
+
+[node name="wood_plato" type="Node3D" parent="scene objects/woods"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="scene objects/woods/wood_plato"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 7.58602, 0, -31.2728)
+mesh = SubResource("CylinderMesh_llkl7")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="scene objects/woods/wood_plato"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 40.3114, 0, -5.59447)
+mesh = SubResource("CylinderMesh_llkl7")
+skeleton = NodePath("")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="scene objects/woods/wood_plato"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 45.1631, 0, -1.0731)
+mesh = SubResource("CylinderMesh_llkl7")
+skeleton = NodePath("")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="scene objects/woods/wood_plato"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 54.5154, 0, 20.5754)
+mesh = SubResource("CylinderMesh_llkl7")
+skeleton = NodePath("")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="scene objects/woods/wood_plato"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 61.268, 0, 13.2338)
+mesh = SubResource("CylinderMesh_llkl7")
+skeleton = NodePath("")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="scene objects/woods/wood_plato"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 57.3452, 0, 17.5895)
+mesh = SubResource("CylinderMesh_llkl7")
+skeleton = NodePath("")
+
+[node name="flowerboxes" type="Node3D" parent="scene objects"]
+transform = Transform3D(0.0883884, 0, 0.0883884, 0, 33.3333, 0, -0.141422, 0, 0.141422, -0.623598, 0, -4.52622)
+
+[node name="flowerbox" parent="scene objects/flowerboxes" instance=ExtResource("36_l485y")]
+transform = Transform3D(0.353553, 0, -0.353553, 0, 0.5, 0, 0.353553, 0, 0.353553, 3.0853, 0.514516, -21.7646)
+
+[node name="flowerbox14" parent="scene objects/flowerboxes" instance=ExtResource("36_l485y")]
+transform = Transform3D(0.243344, 0, -0.96994, 0, 1, 0, 0.96994, 0, 0.243344, -25.4196, -0.18433, -41.6648)
+
+[node name="flowerbox15" parent="scene objects/flowerboxes" instance=ExtResource("36_l485y")]
+transform = Transform3D(0.243344, 0, -0.96994, 0, 1, 0, 0.96994, 0, 0.243344, -24.4556, -0.18433, -43.0807)
+
+[node name="flowerbox3" parent="scene objects/flowerboxes" instance=ExtResource("36_l485y")]
+transform = Transform3D(0.565685, 0, -0.565685, 0, 0.8, 0, 0.565685, 0, 0.565685, -5.75202, 0.514516, 11.0294)
+
+[node name="flowerbox4" parent="scene objects/flowerboxes" instance=ExtResource("36_l485y")]
+transform = Transform3D(0.565685, 0, -0.565685, 0, 0.8, 0, 0.565685, 0, 0.565685, 5.28453, 0.514516, 0.00537968)
+
+[node name="flowerbox12" parent="scene objects/flowerboxes" instance=ExtResource("36_l485y")]
+transform = Transform3D(0.565685, 0, -0.565685, 0, 0.8, 0, 0.565685, 0, 0.565685, -25.3871, 0.514516, 12.6121)
+
+[node name="flowerbox13" parent="scene objects/flowerboxes" instance=ExtResource("36_l485y")]
+transform = Transform3D(0.565685, 0, -0.565685, 0, 0.8, 0, 0.565685, 0, 0.565685, -3.40733, 0.514516, -9.44279)
+
+[node name="flowerbox5" parent="scene objects/flowerboxes" instance=ExtResource("36_l485y")]
+transform = Transform3D(0.565685, 0, -0.565685, 0, 0.8, 0, 0.565685, 0, 0.565685, -3.57101, 0.514516, 13.2104)
+
+[node name="flowerbox16" parent="scene objects/flowerboxes" instance=ExtResource("36_l485y")]
+transform = Transform3D(0.565685, 0, -0.565685, 0, 0.8, 0, 0.565685, 0, 0.565685, -7.49836, 0.514516, 31.6215)
+
+[node name="flowerbox17" parent="scene objects/flowerboxes" instance=ExtResource("36_l485y")]
+transform = Transform3D(0.565685, 0, -0.565685, 0, 0.8, 0, 0.565685, 0, 0.565685, 3.14282, 0.514516, 21.0802)
+
+[node name="flowerbox18" parent="scene objects/flowerboxes" instance=ExtResource("36_l485y")]
+transform = Transform3D(0.565685, 0, -0.565685, 0, 0.8, 0, 0.565685, 0, 0.565685, 55.6987, 0.514516, 15.1014)
+
+[node name="flowerbox6" parent="scene objects/flowerboxes" instance=ExtResource("36_l485y")]
+transform = Transform3D(0.565685, 0, -0.565685, 0, 0.8, 0, 0.565685, 0, 0.565685, 7.46554, 0.514516, 2.18639)
+
+[node name="flowerbox9" parent="scene objects/flowerboxes" instance=ExtResource("36_l485y")]
+transform = Transform3D(0.563132, 0, 0.568227, 0, 0.8, 0, -0.568227, 0, 0.563132, 24.5028, 0.514516, 8.35833)
+
+[node name="flowerbox10" parent="scene objects/flowerboxes" instance=ExtResource("36_l485y")]
+transform = Transform3D(0.563132, 0, 0.568227, 0, 0.8, 0, -0.568227, 0, 0.563132, 34.9603, 0.514516, 18.6658)
+
+[node name="flowerbox11" parent="scene objects/flowerboxes" instance=ExtResource("36_l485y")]
+transform = Transform3D(0.563132, 0, 0.568227, 0, 0.8, 0, -0.568227, 0, 0.563132, 45.2959, 0.514516, 28.9182)
+
+[node name="flowerbox7" parent="scene objects/flowerboxes" instance=ExtResource("36_l485y")]
+transform = Transform3D(0.353553, 0, -0.353553, 0, 0.5, 0, 0.353553, 0, 0.353553, -19.0972, 0.514516, 23.6052)
+
+[node name="flowerbox8" parent="scene objects/flowerboxes" instance=ExtResource("36_l485y")]
+transform = Transform3D(0.353553, 0, -0.353553, 0, 0.5, 0, 0.353553, 0, 0.353553, -16.3197, 0.514516, 26.1663)
+
+[node name="flowerbox2" parent="scene objects/flowerboxes" instance=ExtResource("36_l485y")]
+transform = Transform3D(0.353553, 0, -0.353553, 0, 0.5, 0, 0.353553, 0, 0.353553, 9.49173, 0.514516, -28.1499)
+
+[node name="flowerbox19" parent="scene objects/flowerboxes" instance=ExtResource("36_l485y")]
+transform = Transform3D(0.358613, 0, 0.34842, 0, 0.5, 0, -0.34842, 0, 0.358613, 8.36158, 0.514516, -34.7031)
+
+[node name="fakehouses" type="Node3D" parent="scene objects"]
+transform = Transform3D(0.0883884, 0, 0.0883884, 0, 33.3333, 0, -0.141422, 0, 0.141422, -0.623598, 0, -4.52622)
+
+[node name="fake_house_1" type="MeshInstance3D" parent="scene objects/fakehouses"]
+transform = Transform3D(5.65685, 0, 13.435, 0, 5, 0, -5.65685, 0, 13.435, 12.0408, 2.27824, -46.7412)
+mesh = SubResource("BoxMesh_6to8n")
+skeleton = NodePath("../../..")
+
+[node name="fake_house_2" type="MeshInstance3D" parent="scene objects/fakehouses"]
+transform = Transform3D(5.65685, 0, 13.435, 0, 10, 0, -5.65685, 0, 13.435, -5.16712, 4.89981, -29.6934)
+mesh = SubResource("BoxMesh_6to8n")
+skeleton = NodePath("../../..")
+
+[node name="fake_house_3" type="MeshInstance3D" parent="scene objects/fakehouses"]
+transform = Transform3D(12.7279, 0, 5.65685, 0, 6, 0, -12.7279, 0, 5.65685, -0.268422, 2.97037, -42.0533)
+mesh = SubResource("BoxMesh_6to8n")
+skeleton = NodePath("../../..")
+
+[node name="fake_house_4" type="MeshInstance3D" parent="scene objects/fakehouses"]
+transform = Transform3D(4.24264, 0, 13.435, 0, 5, 0, -4.24264, 0, 13.435, 65.5103, 2.27824, 8.78215)
+mesh = SubResource("BoxMesh_6to8n")
+skeleton = NodePath("../../..")
+
+[node name="fake_house_up_1" type="MeshInstance3D" parent="scene objects/fakehouses"]
+transform = Transform3D(5.65685, 0, 13.435, 0, 1, 0, -5.65685, 0, 13.435, 12.0408, 5.30592, -46.7412)
+material_override = ExtResource("33_d4djk")
+mesh = SubResource("BoxMesh_6to8n")
+skeleton = NodePath("../../..")
+
+[node name="fake_house_up_5" type="MeshInstance3D" parent="scene objects/fakehouses"]
+transform = Transform3D(5.65685, 0, 13.435, 0, 1, 0, -5.65685, 0, 13.435, 12.0408, 2.11442, -45.0589)
+material_override = ExtResource("33_d4djk")
+mesh = SubResource("BoxMesh_6to8n")
+skeleton = NodePath("../../..")
+
+[node name="fake_house_up_2" type="MeshInstance3D" parent="scene objects/fakehouses"]
+transform = Transform3D(5.65685, 0, 13.435, 0, 1, 0, -5.65685, 0, 13.435, -5.16712, 10.3896, -29.6934)
+material_override = ExtResource("33_d4djk")
+mesh = SubResource("BoxMesh_6to8n")
+skeleton = NodePath("../../..")
+
+[node name="fake_house_5" type="MeshInstance3D" parent="scene objects/fakehouses"]
+transform = Transform3D(7.07107, 0, -8.94137, 0, 6, 0, 7.07107, 0, 8.94137, -30.5929, 2.88051, 6.58535)
+material_override = ExtResource("34_uh46e")
+mesh = SubResource("BoxMesh_6to8n")
+skeleton = NodePath("../../..")
+
+[node name="fake_house_up_6" type="MeshInstance3D" parent="scene objects/fakehouses"]
+transform = Transform3D(7.07107, 0, -8.50649, 0, 1, 0, 7.07107, 0, 8.50649, -30.3416, 6.30724, 6.41358)
+material_override = ExtResource("33_d4djk")
+mesh = SubResource("BoxMesh_6to8n")
+skeleton = NodePath("../../..")
+
+[node name="fake_house_7" type="MeshInstance3D" parent="scene objects/fakehouses"]
+transform = Transform3D(7.07107, 0, -7.07107, 0, 8, 0, 7.07107, 0, 7.07107, -39.2891, 3.89253, -1.15779)
+material_override = ExtResource("35_1lbw8")
+mesh = SubResource("BoxMesh_6to8n")
+skeleton = NodePath("../../..")
+
+[node name="fake_house_up_8" type="MeshInstance3D" parent="scene objects/fakehouses"]
+transform = Transform3D(7.07107, 0, -7.07107, 0, 1, 0, 7.07107, 0, 7.07107, -39.2891, 8.36305, -1.15779)
+material_override = ExtResource("33_d4djk")
+mesh = SubResource("BoxMesh_6to8n")
+skeleton = NodePath("../../..")
+
+[node name="fake_house_6" type="MeshInstance3D" parent="scene objects/fakehouses"]
+transform = Transform3D(21.2132, 0, 7.07107, 0, 8, 0, -21.2132, 0, 7.07107, -32.9546, 3.89253, -21.1836)
+material_override = ExtResource("35_1lbw8")
+mesh = SubResource("BoxMesh_6to8n")
+skeleton = NodePath("../../..")
+
+[node name="fake_house_up_7" type="MeshInstance3D" parent="scene objects/fakehouses"]
+transform = Transform3D(21.2132, 0, 7.07107, 0, 1, 0, -21.2132, 0, 7.07107, -32.9546, 8.36305, -21.1836)
+material_override = ExtResource("33_d4djk")
+mesh = SubResource("BoxMesh_6to8n")
+skeleton = NodePath("../../..")
+
+[node name="fake_house_up_3" type="MeshInstance3D" parent="scene objects/fakehouses"]
+transform = Transform3D(12.7279, 0, 5.65685, 0, 1, 0, -12.7279, 0, 5.65685, -0.268422, 6.4891, -42.0533)
+material_override = ExtResource("33_d4djk")
+mesh = SubResource("BoxMesh_6to8n")
+skeleton = NodePath("../../..")
+
+[node name="fake_house_up_4" type="MeshInstance3D" parent="scene objects/fakehouses"]
+transform = Transform3D(4.24264, 0, 13.435, 0, 1, 0, -4.24264, 0, 13.435, 65.5103, 5.31476, 8.78215)
+material_override = ExtResource("33_d4djk")
+mesh = SubResource("BoxMesh_6to8n")
+skeleton = NodePath("../../..")
+
+[node name="fakewindows" type="Node3D" parent="scene objects"]
+transform = Transform3D(0.0883884, 0, 0.0883884, 0, 33.3333, 0, -0.141422, 0, 0.141422, -0.623598, 0, -4.52622)
+
+[node name="fake_window" parent="scene objects/fakewindows" instance=ExtResource("37_8j3ls")]
+transform = Transform3D(0.565685, 0, -0.565685, 0, 0.8, 0, 0.565685, 0, 0.565685, -30.2574, 4.44221, 13.2825)
+
+[node name="fake_window2" parent="scene objects/fakewindows" instance=ExtResource("37_8j3ls")]
+transform = Transform3D(0.565685, 0, -0.565685, 0, 0.8, 0, 0.565685, 0, 0.565685, -28.1751, 4.44221, 11.2192)
+
+[node name="fake_window3" parent="scene objects/fakewindows" instance=ExtResource("37_8j3ls")]
+transform = Transform3D(0.565685, 0, -0.565685, 0, 0.8, 0, 0.565685, 0, 0.565685, -25.925, 4.44221, 8.90862)
+
+[node name="fake_window4" parent="scene objects/fakewindows" instance=ExtResource("37_8j3ls")]
+transform = Transform3D(0.565685, 0, -0.565685, 0, 0.8, 0, 0.565685, 0, 0.565685, -23.8426, 4.44221, 6.84529)
+
+[node name="fake_window5" parent="scene objects/fakewindows" instance=ExtResource("37_8j3ls")]
+transform = Transform3D(0.565685, 0, -0.565685, 0, 0.8, 0, 0.565685, 0, 0.565685, -30.2574, 1.64537, 13.2825)
+
+[node name="fake_window6" parent="scene objects/fakewindows" instance=ExtResource("37_8j3ls")]
+transform = Transform3D(0.565685, 0, -0.565685, 0, 0.8, 0, 0.565685, 0, 0.565685, -28.1751, 1.64537, 11.2192)
+
+[node name="fake_window7" parent="scene objects/fakewindows" instance=ExtResource("37_8j3ls")]
+transform = Transform3D(0.565685, 0, -0.565685, 0, 0.8, 0, 0.565685, 0, 0.565685, -25.925, 1.64537, 8.90862)
+
+[node name="fake_window8" parent="scene objects/fakewindows" instance=ExtResource("37_8j3ls")]
+transform = Transform3D(0.565685, 0, -0.565685, 0, 0.8, 0, 0.565685, 0, 0.565685, -23.8426, 1.64537, 6.84529)
+
+[node name="fake_window9" parent="scene objects/fakewindows" instance=ExtResource("37_8j3ls")]
+transform = Transform3D(0.565685, 0, -0.565685, 0, 0.8, 0, 0.565685, 0, 0.565685, -30.9395, 6.36188, -16.1056)
+
+[node name="fake_window10" parent="scene objects/fakewindows" instance=ExtResource("37_8j3ls")]
+transform = Transform3D(0.565685, 0, -0.565685, 0, 0.8, 0, 0.565685, 0, 0.565685, -28.8571, 6.36188, -18.1689)
+
+[node name="fake_window11" parent="scene objects/fakewindows" instance=ExtResource("37_8j3ls")]
+transform = Transform3D(0.565685, 0, -0.565685, 0, 0.8, 0, 0.565685, 0, 0.565685, -26.607, 6.36188, -20.4795)
+
+[node name="fake_window12" parent="scene objects/fakewindows" instance=ExtResource("37_8j3ls")]
+transform = Transform3D(0.565685, 0, -0.565685, 0, 0.8, 0, 0.565685, 0, 0.565685, -24.5247, 6.36188, -22.5428)
+
+[node name="fake_window51" parent="scene objects/fakewindows" instance=ExtResource("37_8j3ls")]
+transform = Transform3D(-0.569022, 0, -0.562329, 0, 0.8, 0, 0.562329, 0, -0.569022, 9.62811, 3.65586, -43.547)
+
+[node name="fake_window52" parent="scene objects/fakewindows" instance=ExtResource("37_8j3ls")]
+transform = Transform3D(-0.569022, 0, -0.562329, 0, 0.8, 0, 0.562329, 0, -0.569022, 11.9254, 3.65586, -41.2832)
+
+[node name="fake_window53" parent="scene objects/fakewindows" instance=ExtResource("37_8j3ls")]
+transform = Transform3D(-0.569022, 0, -0.562329, 0, 0.8, 0, 0.562329, 0, -0.569022, 13.9763, 3.65586, -39.1887)
+
+[node name="fake_window54" parent="scene objects/fakewindows" instance=ExtResource("37_8j3ls")]
+transform = Transform3D(0.562547, 0, -0.568806, 0, 0.8, 0, 0.568806, 0, 0.562547, -1.06366, 4.50451, -35.5669)
+
+[node name="fake_window55" parent="scene objects/fakewindows" instance=ExtResource("37_8j3ls")]
+transform = Transform3D(0.562547, 0, -0.568806, 0, 0.8, 0, 0.568806, 0, 0.562547, 1.03008, 4.50451, -37.6186)
+
+[node name="fake_window56" parent="scene objects/fakewindows" instance=ExtResource("37_8j3ls")]
+transform = Transform3D(0.562547, 0, -0.568806, 0, 0.8, 0, 0.568806, 0, 0.562547, 3.29294, 4.50451, -39.9168)
+
+[node name="fake_window57" parent="scene objects/fakewindows" instance=ExtResource("37_8j3ls")]
+transform = Transform3D(0.562547, 0, -0.568806, 0, 0.8, 0, 0.568806, 0, 0.562547, 5.38668, 4.50451, -41.9685)
+
+[node name="fake_window58" parent="scene objects/fakewindows" instance=ExtResource("37_8j3ls")]
+transform = Transform3D(0.562547, 0, -0.568806, 0, 0.8, 0, 0.568806, 0, 0.562547, -1.06366, 1.6655, -35.5669)
+
+[node name="fake_window59" parent="scene objects/fakewindows" instance=ExtResource("37_8j3ls")]
+transform = Transform3D(0.562547, 0, -0.568806, 0, 0.8, 0, 0.568806, 0, 0.562547, 1.03008, 1.6655, -37.6186)
+
+[node name="fake_window60" parent="scene objects/fakewindows" instance=ExtResource("37_8j3ls")]
+transform = Transform3D(0.562547, 0, -0.568806, 0, 0.8, 0, 0.568806, 0, 0.562547, 3.29294, 1.6655, -39.9168)
+
+[node name="fake_window61" parent="scene objects/fakewindows" instance=ExtResource("37_8j3ls")]
+transform = Transform3D(0.562547, 0, -0.568806, 0, 0.8, 0, 0.568806, 0, 0.562547, 5.38668, 1.6655, -41.9685)
+
+[node name="fake_window14" parent="scene objects/fakewindows" instance=ExtResource("37_8j3ls")]
+transform = Transform3D(0.565685, 0, -0.565685, 0, 0.8, 0, 0.565685, 0, 0.565685, -28.8571, 3.56504, -18.1689)
+
+[node name="fake_window15" parent="scene objects/fakewindows" instance=ExtResource("37_8j3ls")]
+transform = Transform3D(0.565685, 0, -0.565685, 0, 0.8, 0, 0.565685, 0, 0.565685, -26.607, 3.56504, -20.4795)
+
+[node name="fake_window21" parent="scene objects/fakewindows" instance=ExtResource("37_8j3ls")]
+transform = Transform3D(0.565685, 0, -0.565685, 0, 0.8, 0, 0.565685, 0, 0.565685, -37.6276, 6.36188, -9.49268)
+
+[node name="fake_window23" parent="scene objects/fakewindows" instance=ExtResource("37_8j3ls")]
+transform = Transform3D(0.565685, 0, -0.565685, 0, 0.8, 0, 0.565685, 0, 0.565685, -33.2951, 6.36188, -13.8666)
+
+[node name="fake_window24" parent="scene objects/fakewindows" instance=ExtResource("37_8j3ls")]
+transform = Transform3D(0.565685, 0, -0.565685, 0, 0.8, 0, 0.565685, 0, 0.565685, -37.6276, 3.56504, -9.49268)
+
+[node name="fake_window25" parent="scene objects/fakewindows" instance=ExtResource("37_8j3ls")]
+transform = Transform3D(0.565685, 0, -0.565685, 0, 0.8, 0, 0.565685, 0, 0.565685, -35.5452, 3.56504, -11.556)
+
+[node name="fake_window27" parent="scene objects/fakewindows" instance=ExtResource("37_8j3ls")]
+transform = Transform3D(0.558752, 0, 0.572535, 0, 0.8, 0, -0.572535, 0, 0.558752, -37.883, 6.36188, -6.77197)
+
+[node name="fake_window28" parent="scene objects/fakewindows" instance=ExtResource("37_8j3ls")]
+transform = Transform3D(0.558752, 0, 0.572535, 0, 0.8, 0, -0.572535, 0, 0.558752, -37.883, 3.56504, -6.77197)
+
+[node name="fake_window30" parent="scene objects/fakewindows" instance=ExtResource("37_8j3ls")]
+transform = Transform3D(0.558752, 0, 0.572535, 0, 0.8, 0, -0.572535, 0, 0.558752, -33.2776, 6.36188, -2.22203)
+
+[node name="fake_window31" parent="scene objects/fakewindows" instance=ExtResource("37_8j3ls")]
+transform = Transform3D(0.558752, 0, 0.572535, 0, 0.8, 0, -0.572535, 0, 0.558752, -35.6155, 6.36188, -4.44382)
+
+[node name="fake_window33" parent="scene objects/fakewindows" instance=ExtResource("37_8j3ls")]
+transform = Transform3D(0.558752, 0, 0.572535, 0, 0.8, 0, -0.572535, 0, 0.558752, -33.2776, 3.56504, -2.22203)
+
+[node name="fake_window34" parent="scene objects/fakewindows" instance=ExtResource("37_8j3ls")]
+transform = Transform3D(0.558752, 0, 0.572535, 0, 0.8, 0, -0.572535, 0, 0.558752, -35.6155, 3.56504, -4.44382)
+
+[node name="fake_window29" parent="scene objects/fakewindows" instance=ExtResource("37_8j3ls")]
+transform = Transform3D(0.558752, 0, 0.572535, 0, 0.8, 0, -0.572535, 0, 0.558752, -28.4579, 4.55682, -0.160355)
+
+[node name="fake_window35" parent="scene objects/fakewindows" instance=ExtResource("37_8j3ls")]
+transform = Transform3D(0.558752, 0, 0.572535, 0, 0.8, 0, -0.572535, 0, 0.558752, -23.8526, 4.55682, 4.38958)
+
+[node name="fake_window36" parent="scene objects/fakewindows" instance=ExtResource("37_8j3ls")]
+transform = Transform3D(0.558752, 0, 0.572535, 0, 0.8, 0, -0.572535, 0, 0.558752, -26.1904, 4.55682, 2.16779)
+
+[node name="fake_window37" parent="scene objects/fakewindows" instance=ExtResource("37_8j3ls")]
+transform = Transform3D(0.558752, 0, 0.572535, 0, 0.8, 0, -0.572535, 0, 0.558752, -23.8526, 1.75998, 4.38958)
+
+[node name="fake_window16" parent="scene objects/fakewindows" instance=ExtResource("37_8j3ls")]
+transform = Transform3D(0.565685, 0, -0.565685, 0, 0.8, 0, 0.565685, 0, 0.565685, -24.5247, 3.56504, -22.5428)
+
+[node name="fake_window13" parent="scene objects/fakewindows" instance=ExtResource("37_8j3ls")]
+transform = Transform3D(-0.563727, 0, -0.567637, 0, 0.8, 0, 0.567637, 0, -0.563727, -13.3501, 7.801, -32.233)
+
+[node name="fake_window17" parent="scene objects/fakewindows" instance=ExtResource("37_8j3ls")]
+transform = Transform3D(-0.563727, 0, -0.567637, 0, 0.8, 0, 0.567637, 0, -0.563727, -11.2133, 7.801, -30.0901)
+
+[node name="fake_window19" parent="scene objects/fakewindows" instance=ExtResource("37_8j3ls")]
+transform = Transform3D(-0.563727, 0, -0.567637, 0, 0.8, 0, 0.567637, 0, -0.563727, -8.96124, 7.801, -27.9157)
+
+[node name="fake_window22" parent="scene objects/fakewindows" instance=ExtResource("37_8j3ls")]
+transform = Transform3D(-0.563727, 0, -0.567637, 0, 0.8, 0, 0.567637, 0, -0.563727, -13.3501, 5.00416, -32.233)
+
+[node name="fake_window26" parent="scene objects/fakewindows" instance=ExtResource("37_8j3ls")]
+transform = Transform3D(-0.563727, 0, -0.567637, 0, 0.8, 0, 0.567637, 0, -0.563727, -11.2133, 5.00416, -30.0901)
+
+[node name="fake_window32" parent="scene objects/fakewindows" instance=ExtResource("37_8j3ls")]
+transform = Transform3D(-0.563727, 0, -0.567637, 0, 0.8, 0, 0.567637, 0, -0.563727, -8.96124, 5.00416, -27.9157)
+
+[node name="fake_window38" parent="scene objects/fakewindows" instance=ExtResource("37_8j3ls")]
+transform = Transform3D(-0.563727, 0, -0.567637, 0, 0.8, 0, 0.567637, 0, -0.563727, -6.85603, 7.801, -25.6263)
+
+[node name="fake_window39" parent="scene objects/fakewindows" instance=ExtResource("37_8j3ls")]
+transform = Transform3D(-0.563727, 0, -0.567637, 0, 0.8, 0, 0.567637, 0, -0.563727, -4.71928, 7.801, -23.4834)
+
+[node name="fake_window40" parent="scene objects/fakewindows" instance=ExtResource("37_8j3ls")]
+transform = Transform3D(-0.563727, 0, -0.567637, 0, 0.8, 0, 0.567637, 0, -0.563727, -2.46718, 7.801, -21.309)
+
+[node name="fake_window41" parent="scene objects/fakewindows" instance=ExtResource("37_8j3ls")]
+transform = Transform3D(-0.563727, 0, -0.567637, 0, 0.8, 0, 0.567637, 0, -0.563727, -6.85603, 5.00416, -25.6263)
+
+[node name="fake_window42" parent="scene objects/fakewindows" instance=ExtResource("37_8j3ls")]
+transform = Transform3D(-0.563727, 0, -0.567637, 0, 0.8, 0, 0.567637, 0, -0.563727, -4.71928, 5.00416, -23.4834)
+
+[node name="fake_window43" parent="scene objects/fakewindows" instance=ExtResource("37_8j3ls")]
+transform = Transform3D(-0.563727, 0, -0.567637, 0, 0.8, 0, 0.567637, 0, -0.563727, -2.46718, 5.00416, -21.309)
+
+[node name="fake_window44" parent="scene objects/fakewindows" instance=ExtResource("37_8j3ls")]
+transform = Transform3D(0.576044, 0, -0.555134, 0, 0.8, 0, 0.555134, 0, 0.576044, 0.463558, 8.45136, -21.875)
+
+[node name="fake_window45" parent="scene objects/fakewindows" instance=ExtResource("37_8j3ls")]
+transform = Transform3D(0.576044, 0, -0.555134, 0, 0.8, 0, 0.555134, 0, 0.576044, 2.57412, 8.45136, -24.0438)
+
+[node name="fake_window47" parent="scene objects/fakewindows" instance=ExtResource("37_8j3ls")]
+transform = Transform3D(0.576044, 0, -0.555134, 0, 0.8, 0, 0.555134, 0, 0.576044, 0.463558, 5.65452, -21.875)
+
+[node name="fake_window48" parent="scene objects/fakewindows" instance=ExtResource("37_8j3ls")]
+transform = Transform3D(0.576044, 0, -0.555134, 0, 0.8, 0, 0.555134, 0, 0.576044, 2.57412, 5.65452, -24.0438)
+
+[node name="fake_window49" parent="scene objects/fakewindows" instance=ExtResource("37_8j3ls")]
+transform = Transform3D(0.576044, 0, -0.555134, 0, 0.8, 0, 0.555134, 0, 0.576044, 0.463558, 2.61815, -21.875)
+
+[node name="fake_window50" parent="scene objects/fakewindows" instance=ExtResource("37_8j3ls")]
+transform = Transform3D(0.576044, 0, -0.555134, 0, 0.8, 0, 0.555134, 0, 0.576044, 2.57412, 2.61815, -24.0438)
+
+[node name="fake_window18" parent="scene objects/fakewindows" instance=ExtResource("37_8j3ls")]
+transform = Transform3D(0.565685, 0, -0.565685, 0, 0.8, 0, 0.565685, 0, 0.565685, -20.3457, 6.36188, -26.7701)
+
+[node name="fake_window20" parent="scene objects/fakewindows" instance=ExtResource("37_8j3ls")]
+transform = Transform3D(0.565685, 0, -0.565685, 0, 0.8, 0, 0.565685, 0, 0.565685, -20.3457, 3.56504, -26.7701)
+
+[node name="stay_fetchs" type="Node3D" parent="scene objects"]
+transform = Transform3D(0.0883884, 0, 0.0883884, 0, 33.3333, 0, -0.141422, 0, 0.141422, -0.623598, 0, -4.52622)
+
+[node name="stay_fetch" parent="scene objects/stay_fetchs" instance=ExtResource("38_8wpyk")]
+transform = Transform3D(-0.0937403, 0, -0.284979, 0, 0.3, 0, 0.284979, 0, -0.0937403, -26.5621, 0.709528, 21.7151)
+
+[node name="stay_fetch2" parent="scene objects/stay_fetchs" instance=ExtResource("38_8wpyk")]
+transform = Transform3D(-0.211427, 0, -0.212834, 0, 0.3, 0, 0.212834, 0, -0.211427, -24.3794, 0.709528, 23.384)
+
+[node name="stay_fetch3" parent="scene objects/stay_fetchs" instance=ExtResource("38_8wpyk")]
+transform = Transform3D(-0.256166, 0, -0.156137, 0, 0.3, 0, 0.156137, 0, -0.256166, -17.2986, 0.709528, 30.9845)
+
+[node name="stay_fetch4" parent="scene objects/stay_fetchs" instance=ExtResource("38_8wpyk")]
+transform = Transform3D(-0.119005, 0, -0.275387, 0, 0.3, 0, 0.275387, 0, -0.119005, -15.5219, 0.709528, 32.6533)
+
+[node name="stay_fetch5" parent="scene objects/stay_fetchs" instance=ExtResource("38_8wpyk")]
+transform = Transform3D(0.0617331, 0, -0.29358, 0, 0.3, 0, 0.29358, 0, 0.0617331, 45.3386, 0.709528, 23.0871)
+
+[node name="stay_fetch7" parent="scene objects/stay_fetchs" instance=ExtResource("38_8wpyk")]
+transform = Transform3D(0.200354, 0, -0.22329, 0, 0.3, 0, 0.22329, 0, 0.200354, 13.4593, 0.709528, -32.4284)
+
+[node name="stay_fetch6" parent="scene objects/stay_fetchs" instance=ExtResource("38_8wpyk")]
+transform = Transform3D(0.219909, 0, -0.204059, 0, 0.3, 0, 0.204059, 0, 0.219909, 47.5045, 0.709528, 21.969)
+
 [node name="Player" parent="." instance=ExtResource("1")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -15.901, 0.064, 32.8223)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -14.4752, 0.064, 30.8194)
 collision_mask = 5
 
 [node name="Movement" type="Node" parent="Player"]
@@ -699,6 +1933,19 @@ layout_mode = 0
 offset_right = 1153.0
 offset_bottom = 648.0
 color = Color(0, 0.294118, 0.529412, 1)
+
+[node name="collider_collisions" type="Node3D" parent="."]
+
+[node name="StaticBody3D29" type="StaticBody3D" parent="collider_collisions"]
+transform = Transform3D(-5.09117, 0, 23.3345, 0, 1.099, 0, -5.09117, 0, -23.3345, 0.887795, 0.315177, 6.20913)
+
+[node name="temppart" type="CollisionShape3D" parent="collider_collisions/StaticBody3D29"]
+shape = SubResource("BoxShape3D_3i0ds")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="collider_collisions/StaticBody3D29"]
+visible = false
+mesh = SubResource("BoxMesh_q2ysf")
+surface_material_override/0 = SubResource("StandardMaterial3D_sodbi")
 
 [connection signal="area_entered" from="scene objects/collider_collizions/go_to_fabric" to="scene objects/collider_collizions/go_to_fabric" method="_on_area_entered"]
 [connection signal="body_entered" from="scene objects/collider_collizions/go_to_fabric" to="scene objects/collider_collizions/go_to_fabric" method="_on_body_entered"]

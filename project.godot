@@ -26,6 +26,8 @@ SongScene="*res://songs/song_scene.tscn"
 
 window/size/initial_screen=1
 window/stretch/mode="canvas_items"
+window/dpi/allow_hidpi=false
+window/vsync/vsync_mode=3
 
 [filesystem]
 

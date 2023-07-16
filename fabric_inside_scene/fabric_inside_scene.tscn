@@ -1,4 +1,4 @@
-[gd_scene load_steps=66 format=3 uid="uid://crwclf4qqsh3l"]
+[gd_scene load_steps=67 format=3 uid="uid://crwclf4qqsh3l"]
 
 [ext_resource type="PackedScene" uid="uid://c0vnqt6uyxaoa" path="res://fabric_scene/player/Player.tscn" id="1_hdfgv"]
 [ext_resource type="Script" path="res://fabric_inside_scene/fabric_inside_scene_Init.gd" id="1_n1yj0"]
@@ -31,6 +31,7 @@
 [ext_resource type="Script" path="res://fabric_inside_scene/go_to_CNC.gd" id="31_q1rhl"]
 [ext_resource type="Script" path="res://fabric_inside_scene/go_to_tokar.gd" id="31_v4bb1"]
 [ext_resource type="Material" uid="uid://1rj88q6osob1" path="res://fabric_inside_scene/materials/dark_white_material.tres" id="32_6om5f"]
+[ext_resource type="Script" path="res://fabric_inside_scene/go_to_freser.gd" id="32_ylyxy"]
 [ext_resource type="PackedScene" uid="uid://vlla5v60eep8" path="res://fabric_scene/assets/models/flowerbox/flowerbox.gltf" id="33_v73os"]
 [ext_resource type="Material" uid="uid://cjv84cxoj536j" path="res://fabric_inside_scene/materials/dark_dark_white.tres" id="33_xu5n4"]
 [ext_resource type="PackedScene" uid="uid://bmbe23rt2vfof" path="res://fabric_scene/assets/models/tree/tree_foliage.gltf" id="34_6s3cj"]
@@ -159,13 +160,13 @@ _data = {
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4v07t"]
 albedo_color = Color(0.521569, 0.694118, 0.784314, 1)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3aclp"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ch5dd"]
 albedo_color = Color(0.87451, 0.603922, 0.419608, 1)
 metallic_specular = 0.0
 roughness = 0.0
 
 [sub_resource type="BoxMesh" id="BoxMesh_74xs5"]
-material = SubResource("StandardMaterial3D_3aclp")
+material = SubResource("StandardMaterial3D_ch5dd")
 
 [sub_resource type="BoxMesh" id="BoxMesh_dw7lr"]
 
@@ -921,6 +922,14 @@ transform = Transform3D(273.56, 0, 890.013, 0, 500, 0, -534.008, 0, 455.933, 94.
 script = ExtResource("31_v4bb1")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="collider_collisions/go_to_tokar"]
+transform = Transform3D(0.001, -8.74228e-11, 0, 8.74228e-11, 0.001, 0, 0, 0, 0.001, 0.0004745, 0.000170563, 0)
+shape = SubResource("SphereShape3D_mh0wg")
+
+[node name="go_to_freser" type="Area3D" parent="collider_collisions"]
+transform = Transform3D(273.56, 0, 890.013, 0, 500, 0, -534.008, 0, 455.933, 55.6307, 1.51222, 56.0678)
+script = ExtResource("32_ylyxy")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="collider_collisions/go_to_freser"]
 transform = Transform3D(0.001, -8.74228e-11, 0, 8.74228e-11, 0.001, 0, 0, 0, 0.001, 0.0004745, 0.000170563, 0)
 shape = SubResource("SphereShape3D_mh0wg")
 
@@ -1841,6 +1850,9 @@ skeleton = NodePath("")
 [node name="car" parent="." instance=ExtResource("41_n8vjd")]
 transform = Transform3D(-0.00205247, 0, 0.799997, 0, 0.8, 0, -0.799997, 0, -0.00205247, -61.8006, 1.27543, 28.3907)
 
+[node name="car8" parent="." instance=ExtResource("41_n8vjd")]
+transform = Transform3D(-0.00205247, 0, 0.799997, 0, 0.8, 0, -0.799997, 0, -0.00205247, -61.8006, 1.27543, 28.3907)
+
 [node name="car2" parent="." instance=ExtResource("41_n8vjd")]
 transform = Transform3D(0.715455, 0, -0.357945, 0, 0.8, 0, 0.357945, 0, 0.715455, -15.2603, 1.27543, 65.3938)
 
@@ -1910,6 +1922,9 @@ transform = Transform3D(-0.892231, 0, 0.451578, 0, 1, 0, -0.451578, 0, -0.892231
 [connection signal="area_entered" from="collider_collisions/go_to_tokar" to="collider_collisions/go_to_tokar" method="_on_area_entered"]
 [connection signal="body_entered" from="collider_collisions/go_to_tokar" to="collider_collisions/go_to_tokar" method="_on_body_entered"]
 [connection signal="body_exited" from="collider_collisions/go_to_tokar" to="collider_collisions/go_to_tokar" method="_on_body_exited"]
+[connection signal="area_entered" from="collider_collisions/go_to_freser" to="collider_collisions/go_to_freser" method="_on_area_entered"]
+[connection signal="body_entered" from="collider_collisions/go_to_freser" to="collider_collisions/go_to_freser" method="_on_body_entered"]
+[connection signal="body_exited" from="collider_collisions/go_to_freser" to="collider_collisions/go_to_freser" method="_on_body_exited"]
 [connection signal="area_entered" from="collider_collisions/go_to_CNC" to="collider_collisions/go_to_CNC" method="_on_area_entered"]
 [connection signal="body_entered" from="collider_collisions/go_to_CNC" to="collider_collisions/go_to_CNC" method="_on_body_entered"]
 [connection signal="body_exited" from="collider_collisions/go_to_CNC" to="collider_collisions/go_to_CNC" method="_on_body_exited"]

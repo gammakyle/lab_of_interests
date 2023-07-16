@@ -21,6 +21,7 @@
 [ext_resource type="Script" path="res://fabric_scene/player/states/InAir.gd" id="12_f4vnu"]
 [ext_resource type="Script" path="res://fabric_scene/player/states/Falling.gd" id="13_4atdm"]
 [ext_resource type="Script" path="res://fabric_scene/player/states/Jumping.gd" id="14_3hvhy"]
+[ext_resource type="Material" uid="uid://l8ebv7elbsjc" path="res://fabric_scene/assets/matherials/rose_2_color.tres" id="15_0bdul"]
 [ext_resource type="Script" path="res://fabric_scene/player/states/Swimming.gd" id="15_th2i2"]
 [ext_resource type="Script" path="res://fabric_scene/player/states/Diving.gd" id="16_oxi30"]
 [ext_resource type="Script" path="res://fabric_scene/player/states/OnSurface.gd" id="17_t0ai0"]
@@ -34,7 +35,6 @@
 [ext_resource type="PackedScene" uid="uid://bmbe23rt2vfof" path="res://fabric_scene/assets/models/tree/tree_foliage.gltf" id="31_hqpcx"]
 [ext_resource type="PackedScene" uid="uid://nlo62lxcqw0t" path="res://fabric_scene/assets/models/tree/tree_wood.gltf" id="32_vdo5r"]
 [ext_resource type="Material" uid="uid://bcf2xid0q8355" path="res://fabric_scene/assets/matherials/up_house.tres" id="33_d4djk"]
-[ext_resource type="Material" uid="uid://kr8bygn2kxdy" path="res://fabric_scene/assets/matherials/rose_color.tres" id="34_uh46e"]
 [ext_resource type="Material" uid="uid://btg8skynfedwg" path="res://fabric_scene/assets/matherials/rose_1_color.tres" id="35_1lbw8"]
 [ext_resource type="PackedScene" uid="uid://vlla5v60eep8" path="res://fabric_scene/assets/models/flowerbox/flowerbox.gltf" id="36_l485y"]
 [ext_resource type="PackedScene" uid="uid://be6vv6hcghfky" path="res://fabric_scene/assets/models/fake_window/fake_window.gltf" id="37_8j3ls"]
@@ -205,25 +205,25 @@ albedo_color = Color(0.521569, 0.694118, 0.784314, 1)
 [sub_resource type="SphereShape3D" id="SphereShape3D_uyvi4"]
 radius = 5.78989
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rvn7g"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8vfwp"]
 albedo_color = Color(0.329412, 0.462745, 0.25098, 1)
 metallic_specular = 0.0
 roughness = 0.0
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_llkl7"]
-material = SubResource("StandardMaterial3D_rvn7g")
+material = SubResource("StandardMaterial3D_8vfwp")
 top_radius = 0.585
 bottom_radius = 1.035
 height = 0.29
 radial_segments = 7
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rtc75"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tusnd"]
 albedo_color = Color(0.87451, 0.603922, 0.419608, 1)
 metallic_specular = 0.0
 roughness = 0.0
 
 [sub_resource type="BoxMesh" id="BoxMesh_6to8n"]
-material = SubResource("StandardMaterial3D_rtc75")
+material = SubResource("StandardMaterial3D_tusnd")
 
 [sub_resource type="Animation" id="Animation_w2h86"]
 length = 0.001
@@ -810,7 +810,6 @@ transform = Transform3D(0.000299964, 0, 0.0499983, 0, 13.3333, 0, -0.0800056, 0,
 transform = Transform3D(0.050004, 0, 0.000405759, 0, 13.3333, 0, 0.000290047, 0, 0.079996, -1.21598, 15.5463, -6.37256)
 
 [node name="Houseblocks" type="Node3D" parent="scene objects"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="woods" type="Node3D" parent="scene objects"]
 transform = Transform3D(0.0883884, 0, 0.0883884, 0, 33.3333, 0, -0.141422, 0, 0.141422, -0.623598, 0, -4.52622)
@@ -1411,7 +1410,7 @@ skeleton = NodePath("../../..")
 
 [node name="fake_house_5" type="MeshInstance3D" parent="scene objects/fakehouses"]
 transform = Transform3D(7.07107, 0, -8.94137, 0, 6, 0, 7.07107, 0, 8.94137, -30.5929, 2.88051, 6.58535)
-material_override = ExtResource("34_uh46e")
+material_override = ExtResource("15_0bdul")
 mesh = SubResource("BoxMesh_6to8n")
 skeleton = NodePath("../../..")
 

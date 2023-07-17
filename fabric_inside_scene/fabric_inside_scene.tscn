@@ -176,13 +176,13 @@ albedo_color = Color(0.227451, 0.227451, 0.227451, 1)
 [sub_resource type="SphereShape3D" id="SphereShape3D_mh0wg"]
 radius = 5.78989
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rtc75"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cp7b7"]
 albedo_color = Color(0.87451, 0.603922, 0.419608, 1)
 metallic_specular = 0.0
 roughness = 0.0
 
 [sub_resource type="BoxMesh" id="BoxMesh_xbi7l"]
-material = SubResource("StandardMaterial3D_rtc75")
+material = SubResource("StandardMaterial3D_cp7b7")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_orlcd"]
 albedo_color = Color(0.329412, 0.462745, 0.25098, 1)

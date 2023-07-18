@@ -2,6 +2,7 @@ extends Node2D
 
 var GLOBAL_OLD_SCENE = 0
 var GLOBAL_NOW_SCENE = 0
+var GLOBAL_TEXT_ARR = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

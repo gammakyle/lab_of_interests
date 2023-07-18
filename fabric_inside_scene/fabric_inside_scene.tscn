@@ -426,6 +426,7 @@ libraries = {
 [node name="interface" type="Node" parent="Player"]
 
 [node name="Panel" type="Panel" parent="Player/interface"]
+visible = false
 custom_minimum_size = Vector2(300, 0)
 anchors_preset = -1
 anchor_top = 0.645
@@ -437,24 +438,6 @@ offset_right = -35.0
 offset_bottom = -22.028
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="Label" type="Label" parent="Player/interface/Panel"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.461
-anchor_top = 0.678
-anchor_right = 0.538
-anchor_bottom = 0.909
-offset_left = -1.41901
-offset_top = 0.00398254
-offset_right = -0.502075
-offset_bottom = -0.0440216
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 32
-text = "12/12"
-horizontal_alignment = 1
-vertical_alignment = 1
 
 [node name="Button" type="Button" parent="Player/interface/Panel"]
 layout_mode = 1
@@ -482,6 +465,41 @@ offset_right = -15.0
 offset_bottom = -14.972
 theme_override_font_sizes/font_size = 32
 text = "вперед"
+
+[node name="Label_val" type="Label" parent="Player/interface/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.461
+anchor_top = 0.678
+anchor_right = 0.538
+anchor_bottom = 0.909
+offset_left = -1.41901
+offset_top = 0.00398254
+offset_right = -0.502075
+offset_bottom = -0.0440216
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 32
+text = "12/12"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label_text" type="Label" parent="Player/interface/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.014
+anchor_top = 0.111
+anchor_right = 0.983
+anchor_bottom = 0.587
+offset_left = -0.106001
+offset_top = -0.0880089
+offset_right = 0.343018
+offset_bottom = -0.0960388
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 24
+text = "Проверка текста. Проерка текста. Проверка текста. Проверка текста. Проверка текста. Проверка текста. Проверка текста. Проверка текста.  Проверка текста. Проверка текста. Проверка текста.  Проверка текста. Проверка текста. "
+autowrap_mode = 2
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3

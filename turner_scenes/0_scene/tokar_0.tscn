@@ -1,105 +1,102 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=11 format=3 uid="uid://c6jnypunt2g4v"]
 
-[ext_resource path="res://turner_scenes/0_scene/accets/models/rezec_kanavka/ФРЕЗА КАНАВКИ СВЕТЛЫЙ.material" type="Material" id=1]
-[ext_resource path="res://turner_scenes/0_scene/accets/models/rezec_kanavka/ФРЕЗА КАНАВКИ ТЕМНЫЙ.material" type="Material" id=2]
-[ext_resource path="res://turner_scenes/0_scene/accets/models/rezec_kanavka/rezec_kanavka.obj" type="ArrayMesh" id=3]
-[ext_resource path="res://turner_scenes/0_scene/accets/models/bobka/bobka_prefab.tscn" type="PackedScene" id=4]
-[ext_resource path="res://turner_scenes/0_scene/scripts/prut_gen.gd" type="Script" id=5]
-[ext_resource path="res://turner_scenes/0_scene/scripts/rotate_cyl.gd" type="Script" id=6]
+[ext_resource type="Material" path="res://turner_scenes/0_scene/accets/models/rezec_kanavka/ФРЕЗА КАНАВКИ СВЕТЛЫЙ.material" id="1"]
+[ext_resource type="ArrayMesh" uid="uid://bsmblgaa5lesi" path="res://turner_scenes/0_scene/accets/models/rezec_kanavka/rezec_kanavka.obj" id="3"]
+[ext_resource type="PackedScene" path="res://turner_scenes/0_scene/accets/models/bobka/bobka_prefab.tscn" id="4"]
+[ext_resource type="Script" path="res://turner_scenes/0_scene/scripts/prut_gen.gd" id="5"]
+[ext_resource type="Script" path="res://turner_scenes/0_scene/scripts/rotate_cyl.gd" id="6"]
 
-[sub_resource type="ConcavePolygonShape" id=5]
-data = PoolVector3Array( -1, -1, -5.6453, 0, -1, -5.6453, -0.8529, -1, -5.6453, -0.8529, -1, -5.6453, 0, -1, -5.6453, -0.1471, -1, -5.6453, 0, 0, -5.6453, -1, 0, -5.6453, -0.1471, 0, -5.6453, -0.1471, 0, -5.6453, -1, 0, -5.6453, -0.8529, 0, -5.6453, -0.8529, -0.4098, -8.1779, -0.8529, -0.5902, -8.1779, -0.9001, -0.4497, -8.6435, -0.9001, -0.4497, -8.6435, -0.8529, -0.5902, -8.1779, -0.9001, -0.5503, -8.6435, -0.9001, -0.4497, -8.6435, -0.9001, -0.5503, -8.6435, -0.0999, -0.4497, -8.6435, -0.0999, -0.4497, -8.6435, -0.9001, -0.5503, -8.6435, -0.0999, -0.5503, -8.6435, -0.8529, -0.5902, -8.1779, -0.1471, -0.5902, -8.1779, -0.9001, -0.5503, -8.6435, -0.9001, -0.5503, -8.6435, -0.1471, -0.5902, -8.1779, -0.0999, -0.5503, -8.6435, -0.1471, -0.5902, -8.1779, -0.1471, -0.4098, -8.1779, -0.0999, -0.5503, -8.6435, -0.0999, -0.5503, -8.6435, -0.1471, -0.4098, -8.1779, -0.0999, -0.4497, -8.6435, -0.1471, -0.4098, -8.1779, -0.8529, -0.4098, -8.1779, -0.0999, -0.4497, -8.6435, -0.0999, -0.4497, -8.6435, -0.8529, -0.4098, -8.1779, -0.9001, -0.4497, -8.6435, -1, 1, 5.7107, -1, 0, 5.7107, -1, 1, -3.9427, -1, 1, -3.9427, -1, 0, 5.7107, -1, 0, -3.9427, 0, 1, -3.9427, 1, 1, -3.352, 0, 1, 5.7107, 0, 1, 5.7107, 1, 1, -3.352, 1, 1, 5.7107, 1, 1, -3.352, 1, 0, -3.9427, 1, 1, 5.7107, 1, 1, 5.7107, 1, 0, -3.9427, 1, 0, 5.7107, 0, 1, 5.7107, 0, 0, 5.7107, -1, 1, 5.7107, -1, 1, 5.7107, 0, 0, 5.7107, -1, 0, 5.7107, 1, -1, -3.9427, 0, -1, -3.9427, 1, -1, 5.7107, 1, -1, 5.7107, 0, -1, -3.9427, 0, -1, 5.7107, -1, 1, -3.9427, 0, 1, -3.9427, -1, 1, 5.7107, -1, 1, 5.7107, 0, 1, -3.9427, 0, 1, 5.7107, 1, 0, 5.7107, 1, -1, 5.7107, 0, 0, 5.7107, 0, 0, 5.7107, 1, -1, 5.7107, 0, -1, 5.7107, -1, 1, -3.9427, -1, 0, -3.9427, -1, 0, -5.6453, 1, 0, -5.0783, 1, 0, -3.9427, 1, 1, -3.352, 0, -1, -3.9427, 1, -1, -3.9427, 0, -1, -5.6453, 0, -1, -5.6453, 1, -1, -3.9427, 1, -1, -5.0783, -1, 0, 5.7107, -1, -1, 5.7107, -1, 0, -3.9427, -1, 0, -3.9427, -1, -1, 5.7107, -1, -1, -3.9427, 1, 0, -3.9427, 1, -1, -3.9427, 1, 0, 5.7107, 1, 0, 5.7107, 1, -1, -3.9427, 1, -1, 5.7107, 0, 0, 5.7107, 0, -1, 5.7107, -1, 0, 5.7107, -1, 0, 5.7107, 0, -1, 5.7107, -1, -1, 5.7107, -1, 0, -3.9427, -1, -1, -3.9427, -1, 0, -5.6453, -1, 0, -5.6453, -1, -1, -3.9427, -1, -1, -5.6453, 0, 0, -5.6453, 0, -1, -5.6453, 1, 0, -5.0783, 1, 0, -5.0783, 0, -1, -5.6453, 1, -1, -5.0783, 1, -1, -3.9427, 1, 0, -3.9427, 1, -1, -5.0783, 1, -1, -5.0783, 1, 0, -3.9427, 1, 0, -5.0783, -1, 0, -5.6453, 0, 0, -5.6453, -1, 1, -3.9427, -1, 1, -3.9427, 0, 0, -5.6453, 0, 1, -3.9427, -1, -1, -3.9427, 0, -1, -3.9427, -1, -1, -5.6453, -1, -1, -5.6453, 0, -1, -3.9427, 0, -1, -5.6453, 0, -1, -3.9427, -1, -1, -3.9427, 0, -1, 5.7107, 0, -1, 5.7107, -1, -1, -3.9427, -1, -1, 5.7107, 1, 1, 5.7107, 1, 0, 5.7107, 0, 1, 5.7107, 0, 1, 5.7107, 1, 0, 5.7107, 0, 0, 5.7107, 1, 0, -5.0783, 1, 1, -3.352, 0, 0, -5.6453, 0, 0, -5.6453, 1, 1, -3.352, 0, 1, -3.9427, -0.8529, -1, -5.6453, -0.1471, -1, -5.6453, -0.8529, -0.7025, -6.2515, -0.8529, -0.7025, -6.2515, -0.1471, -1, -5.6453, -0.1471, -0.7025, -6.2515, -1, 0, -5.6453, -1, -1, -5.6453, -0.8529, 0, -5.6453, -0.8529, 0, -5.6453, -1, -1, -5.6453, -0.8529, -1, -5.6453, 0, -1, -5.6453, 0, 0, -5.6453, -0.1471, -1, -5.6453, -0.1471, -1, -5.6453, 0, 0, -5.6453, -0.1471, 0, -5.6453, -0.8529, -0.2975, -6.2515, -0.8529, -0.7025, -6.2515, -0.8529, -0.4098, -6.8013, -0.8529, -0.4098, -6.8013, -0.8529, -0.7025, -6.2515, -0.8529, -0.5902, -6.8013, -0.1471, 0, -5.6453, -0.8529, 0, -5.6453, -0.1471, -0.2975, -6.2515, -0.1471, -0.2975, -6.2515, -0.8529, 0, -5.6453, -0.8529, -0.2975, -6.2515, -0.1471, -1, -5.6453, -0.1471, 0, -5.6453, -0.1471, -0.7025, -6.2515, -0.1471, -0.7025, -6.2515, -0.1471, 0, -5.6453, -0.1471, -0.2975, -6.2515, -0.8529, 0, -5.6453, -0.8529, -1, -5.6453, -0.8529, -0.2975, -6.2515, -0.8529, -0.2975, -6.2515, -0.8529, -1, -5.6453, -0.8529, -0.7025, -6.2515, -0.1471, -0.4098, -6.8013, -0.8529, -0.4098, -6.8013, -0.1471, -0.4098, -8.1779, -0.1471, -0.4098, -8.1779, -0.8529, -0.4098, -6.8013, -0.8529, -0.4098, -8.1779, -0.8529, -0.7025, -6.2515, -0.1471, -0.7025, -6.2515, -0.8529, -0.5902, -6.8013, -0.8529, -0.5902, -6.8013, -0.1471, -0.7025, -6.2515, -0.1471, -0.5902, -6.8013, -0.1471, -0.7025, -6.2515, -0.1471, -0.2975, -6.2515, -0.1471, -0.5902, -6.8013, -0.1471, -0.5902, -6.8013, -0.1471, -0.2975, -6.2515, -0.1471, -0.4098, -6.8013, -0.1471, -0.2975, -6.2515, -0.8529, -0.2975, -6.2515, -0.1471, -0.4098, -6.8013, -0.1471, -0.4098, -6.8013, -0.8529, -0.2975, -6.2515, -0.8529, -0.4098, -6.8013, -0.8529, -0.4098, -6.8013, -0.8529, -0.5902, -6.8013, -0.8529, -0.4098, -8.1779, -0.8529, -0.4098, -8.1779, -0.8529, -0.5902, -6.8013, -0.8529, -0.5902, -8.1779, -0.8529, -0.5902, -6.8013, -0.1471, -0.5902, -6.8013, -0.8529, -0.5902, -8.1779, -0.8529, -0.5902, -8.1779, -0.1471, -0.5902, -6.8013, -0.1471, -0.5902, -8.1779, -0.1471, -0.5902, -6.8013, -0.1471, -0.4098, -6.8013, -0.1471, -0.5902, -8.1779, -0.1471, -0.5902, -8.1779, -0.1471, -0.4098, -6.8013, -0.1471, -0.4098, -8.1779 )
+[sub_resource type="ConcavePolygonShape3D" id="5"]
+data = PackedVector3Array(-1, -1, -5.6453, 0, -1, -5.6453, -0.8529, -1, -5.6453, -0.8529, -1, -5.6453, 0, -1, -5.6453, -0.1471, -1, -5.6453, 0, 0, -5.6453, -1, 0, -5.6453, -0.1471, 0, -5.6453, -0.1471, 0, -5.6453, -1, 0, -5.6453, -0.8529, 0, -5.6453, -0.8529, -0.4098, -8.1779, -0.8529, -0.5902, -8.1779, -0.9001, -0.4497, -8.6435, -0.9001, -0.4497, -8.6435, -0.8529, -0.5902, -8.1779, -0.9001, -0.5503, -8.6435, -0.9001, -0.4497, -8.6435, -0.9001, -0.5503, -8.6435, -0.0999, -0.4497, -8.6435, -0.0999, -0.4497, -8.6435, -0.9001, -0.5503, -8.6435, -0.0999, -0.5503, -8.6435, -0.8529, -0.5902, -8.1779, -0.1471, -0.5902, -8.1779, -0.9001, -0.5503, -8.6435, -0.9001, -0.5503, -8.6435, -0.1471, -0.5902, -8.1779, -0.0999, -0.5503, -8.6435, -0.1471, -0.5902, -8.1779, -0.1471, -0.4098, -8.1779, -0.0999, -0.5503, -8.6435, -0.0999, -0.5503, -8.6435, -0.1471, -0.4098, -8.1779, -0.0999, -0.4497, -8.6435, -0.1471, -0.4098, -8.1779, -0.8529, -0.4098, -8.1779, -0.0999, -0.4497, -8.6435, -0.0999, -0.4497, -8.6435, -0.8529, -0.4098, -8.1779, -0.9001, -0.4497, -8.6435, -1, 1, 5.7107, -1, 0, 5.7107, -1, 1, -3.9427, -1, 1, -3.9427, -1, 0, 5.7107, -1, 0, -3.9427, 0, 1, -3.9427, 1, 1, -3.352, 0, 1, 5.7107, 0, 1, 5.7107, 1, 1, -3.352, 1, 1, 5.7107, 1, 1, -3.352, 1, 0, -3.9427, 1, 1, 5.7107, 1, 1, 5.7107, 1, 0, -3.9427, 1, 0, 5.7107, 0, 1, 5.7107, 0, 0, 5.7107, -1, 1, 5.7107, -1, 1, 5.7107, 0, 0, 5.7107, -1, 0, 5.7107, 1, -1, -3.9427, 0, -1, -3.9427, 1, -1, 5.7107, 1, -1, 5.7107, 0, -1, -3.9427, 0, -1, 5.7107, -1, 1, -3.9427, 0, 1, -3.9427, -1, 1, 5.7107, -1, 1, 5.7107, 0, 1, -3.9427, 0, 1, 5.7107, 1, 0, 5.7107, 1, -1, 5.7107, 0, 0, 5.7107, 0, 0, 5.7107, 1, -1, 5.7107, 0, -1, 5.7107, -1, 1, -3.9427, -1, 0, -3.9427, -1, 0, -5.6453, 1, 0, -5.0783, 1, 0, -3.9427, 1, 1, -3.352, 0, -1, -3.9427, 1, -1, -3.9427, 0, -1, -5.6453, 0, -1, -5.6453, 1, -1, -3.9427, 1, -1, -5.0783, -1, 0, 5.7107, -1, -1, 5.7107, -1, 0, -3.9427, -1, 0, -3.9427, -1, -1, 5.7107, -1, -1, -3.9427, 1, 0, -3.9427, 1, -1, -3.9427, 1, 0, 5.7107, 1, 0, 5.7107, 1, -1, -3.9427, 1, -1, 5.7107, 0, 0, 5.7107, 0, -1, 5.7107, -1, 0, 5.7107, -1, 0, 5.7107, 0, -1, 5.7107, -1, -1, 5.7107, -1, 0, -3.9427, -1, -1, -3.9427, -1, 0, -5.6453, -1, 0, -5.6453, -1, -1, -3.9427, -1, -1, -5.6453, 0, 0, -5.6453, 0, -1, -5.6453, 1, 0, -5.0783, 1, 0, -5.0783, 0, -1, -5.6453, 1, -1, -5.0783, 1, -1, -3.9427, 1, 0, -3.9427, 1, -1, -5.0783, 1, -1, -5.0783, 1, 0, -3.9427, 1, 0, -5.0783, -1, 0, -5.6453, 0, 0, -5.6453, -1, 1, -3.9427, -1, 1, -3.9427, 0, 0, -5.6453, 0, 1, -3.9427, -1, -1, -3.9427, 0, -1, -3.9427, -1, -1, -5.6453, -1, -1, -5.6453, 0, -1, -3.9427, 0, -1, -5.6453, 0, -1, -3.9427, -1, -1, -3.9427, 0, -1, 5.7107, 0, -1, 5.7107, -1, -1, -3.9427, -1, -1, 5.7107, 1, 1, 5.7107, 1, 0, 5.7107, 0, 1, 5.7107, 0, 1, 5.7107, 1, 0, 5.7107, 0, 0, 5.7107, 1, 0, -5.0783, 1, 1, -3.352, 0, 0, -5.6453, 0, 0, -5.6453, 1, 1, -3.352, 0, 1, -3.9427, -0.8529, -1, -5.6453, -0.1471, -1, -5.6453, -0.8529, -0.7025, -6.2515, -0.8529, -0.7025, -6.2515, -0.1471, -1, -5.6453, -0.1471, -0.7025, -6.2515, -1, 0, -5.6453, -1, -1, -5.6453, -0.8529, 0, -5.6453, -0.8529, 0, -5.6453, -1, -1, -5.6453, -0.8529, -1, -5.6453, 0, -1, -5.6453, 0, 0, -5.6453, -0.1471, -1, -5.6453, -0.1471, -1, -5.6453, 0, 0, -5.6453, -0.1471, 0, -5.6453, -0.8529, -0.2975, -6.2515, -0.8529, -0.7025, -6.2515, -0.8529, -0.4098, -6.8013, -0.8529, -0.4098, -6.8013, -0.8529, -0.7025, -6.2515, -0.8529, -0.5902, -6.8013, -0.1471, 0, -5.6453, -0.8529, 0, -5.6453, -0.1471, -0.2975, -6.2515, -0.1471, -0.2975, -6.2515, -0.8529, 0, -5.6453, -0.8529, -0.2975, -6.2515, -0.1471, -1, -5.6453, -0.1471, 0, -5.6453, -0.1471, -0.7025, -6.2515, -0.1471, -0.7025, -6.2515, -0.1471, 0, -5.6453, -0.1471, -0.2975, -6.2515, -0.8529, 0, -5.6453, -0.8529, -1, -5.6453, -0.8529, -0.2975, -6.2515, -0.8529, -0.2975, -6.2515, -0.8529, -1, -5.6453, -0.8529, -0.7025, -6.2515, -0.1471, -0.4098, -6.8013, -0.8529, -0.4098, -6.8013, -0.1471, -0.4098, -8.1779, -0.1471, -0.4098, -8.1779, -0.8529, -0.4098, -6.8013, -0.8529, -0.4098, -8.1779, -0.8529, -0.7025, -6.2515, -0.1471, -0.7025, -6.2515, -0.8529, -0.5902, -6.8013, -0.8529, -0.5902, -6.8013, -0.1471, -0.7025, -6.2515, -0.1471, -0.5902, -6.8013, -0.1471, -0.7025, -6.2515, -0.1471, -0.2975, -6.2515, -0.1471, -0.5902, -6.8013, -0.1471, -0.5902, -6.8013, -0.1471, -0.2975, -6.2515, -0.1471, -0.4098, -6.8013, -0.1471, -0.2975, -6.2515, -0.8529, -0.2975, -6.2515, -0.1471, -0.4098, -6.8013, -0.1471, -0.4098, -6.8013, -0.8529, -0.2975, -6.2515, -0.8529, -0.4098, -6.8013, -0.8529, -0.4098, -6.8013, -0.8529, -0.5902, -6.8013, -0.8529, -0.4098, -8.1779, -0.8529, -0.4098, -8.1779, -0.8529, -0.5902, -6.8013, -0.8529, -0.5902, -8.1779, -0.8529, -0.5902, -6.8013, -0.1471, -0.5902, -6.8013, -0.8529, -0.5902, -8.1779, -0.8529, -0.5902, -8.1779, -0.1471, -0.5902, -6.8013, -0.1471, -0.5902, -8.1779, -0.1471, -0.5902, -6.8013, -0.1471, -0.4098, -6.8013, -0.1471, -0.5902, -8.1779, -0.1471, -0.5902, -8.1779, -0.1471, -0.4098, -6.8013, -0.1471, -0.4098, -8.1779)
 
-[sub_resource type="Environment" id=3]
+[sub_resource type="Environment" id="3"]
 background_mode = 1
-background_color = Color( 0.113725, 0.286275, 0.427451, 1 )
-ambient_light_color = Color( 1, 1, 1, 1 )
+background_color = Color(0.113725, 0.286275, 0.427451, 1)
+ambient_light_color = Color(1, 1, 1, 1)
 
-[sub_resource type="CubeMesh" id=6]
+[sub_resource type="BoxMesh" id="6"]
 
-[sub_resource type="CubeMesh" id=7]
+[sub_resource type="BoxMesh" id="7"]
 
-[sub_resource type="CubeMesh" id=8]
+[sub_resource type="BoxMesh" id="8"]
 
-[node name="Spatial" type="Spatial"]
+[node name="Spatial" type="Node3D"]
 
-[node name="RigidBody" parent="." instance=ExtResource( 4 )]
-transform = Transform( 5, 0, 0, 0, 1, 0, 0, 0, 1, 0.70562, 0, 0 )
+[node name="RigidBody" parent="." instance=ExtResource("4")]
+transform = Transform3D(5, 0, 0, 0, 1, 0, 0, 0, 1, 0.70562, 0, 0)
+gravity_scale = 0.0
 
-[node name="RigidBody2" type="RigidBody" parent="."]
-transform = Transform( 0.693, 0, 0, 0, 0.999899, 0.014224, 0, -0.014224, 0.999899, -3.16267, -0.0440302, 15.4893 )
-mode = 1
+[node name="RigidBody2" type="RigidBody3D" parent="."]
+transform = Transform3D(0.693, 0, 0, 0, 0.999899, 0.014224, 0, -0.014224, 0.999899, -3.16267, -0.0440302, 7.21949)
+gravity_scale = 0.0
 
-[node name="MeshInstance2" type="MeshInstance" parent="RigidBody2"]
-transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 0.271989, 1.81163, 7.87683 )
-mesh = ExtResource( 3 )
+[node name="MeshInstance2" type="MeshInstance3D" parent="RigidBody2"]
+transform = Transform3D(1, 0, 0, 0, 1, -1.86265e-09, 0, 1.86265e-09, 1, 0.271989, 1.19368, 7.86804)
+mesh = ExtResource("3")
 skeleton = NodePath("../..")
-material/0 = ExtResource( 1 )
-material/1 = ExtResource( 2 )
 
-[node name="CollisionShape" type="CollisionShape" parent="RigidBody2"]
-transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 0.272705, 1.81163, 7.86116 )
-shape = SubResource( 5 )
+[node name="CollisionShape" type="CollisionShape3D" parent="RigidBody2"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0.272705, 1.81163, 7.86116)
+visible = false
+shape = SubResource("5")
 
-[node name="left_pos" type="Position3D" parent="RigidBody2"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.832, -9.338 )
+[node name="left_pos" type="Marker3D" parent="RigidBody2"]
+transform = Transform3D(1, 0, 0, 0, 1, -5.58794e-09, 0, 5.58794e-09, 1, 0.166253, 0.710184, -0.774713)
 
-[node name="right_pos" type="Position3D" parent="RigidBody2"]
-transform = Transform( 1, 0, 0, 0, 1, -9.31323e-10, 0, 9.31323e-10, 1, -1.442, 0.832, -9.338 )
+[node name="right_pos" type="Marker3D" parent="RigidBody2"]
+transform = Transform3D(1, 0, 0, 0, 1, -7.45058e-09, 0, 7.45058e-09, 1, -0.633406, 0.710184, -0.774714)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource( 3 )
+environment = SubResource("3")
 
-[node name="Camera" type="Camera" parent="."]
-transform = Transform( -0.919032, 0.338393, -0.202163, 0, 0.512867, 0.858468, 0.394182, 0.78896, -0.471341, -11.598, 14.7698, -3.93474 )
+[node name="Camera" type="Camera3D" parent="."]
+transform = Transform3D(0.84151, -0.306772, 0.444691, 0, 0.823137, 0.567844, -0.54024, -0.477847, 0.692678, 0.632, 10.33, 17.33)
+fov = 50.0
 far = 1000.0
 
-[node name="ToolHandler" type="Spatial" parent="."]
+[node name="ToolHandler" type="Node3D" parent="."]
 
-[node name="Head" type="Spatial" parent="ToolHandler"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.32682, 0, 0 )
+[node name="Head" type="Node3D" parent="ToolHandler"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.32682, 0, 0)
 
-[node name="HeadCombiner" type="CSGCombiner" parent="ToolHandler/Head"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.62642, 0, 0 )
+[node name="HeadCombiner" type="CSGCombiner3D" parent="ToolHandler/Head"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.62642, 0, 0)
 operation = 2
 
-[node name="Cut" type="Spatial" parent="ToolHandler"]
+[node name="Cut" type="Node3D" parent="ToolHandler"]
 
-[node name="--- Debugging process started ---Godot Engine v344stableofficial419e713a2 - httpsgodotengineorgOpenGL ES 20 Renderer GeForce 840MPCIeSSE2OpenGL ES Batching ON" type="CSGCombiner" parent="ToolHandler/Cut"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.216841, 0 )
+[node name="--- Debugging process started ---Godot Engine v344stableofficial419e713a2 - httpsgodotengineorgOpenGL ES 20 Renderer GeForce 840MPCIeSSE2OpenGL ES Batching ON" type="CSGCombiner3D" parent="ToolHandler/Cut"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.216841, 0)
 operation = 2
 snap = 0.0001
 
-[node name="Spatial" type="Spatial" parent="ToolHandler/Cut/--- Debugging process started ---Godot Engine v344stableofficial419e713a2 - httpsgodotengineorgOpenGL ES 20 Renderer GeForce 840MPCIeSSE2OpenGL ES Batching ON"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.216841, 0 )
-script = ExtResource( 6 )
+[node name="Spatial" type="Node3D" parent="ToolHandler/Cut/--- Debugging process started ---Godot Engine v344stableofficial419e713a2 - httpsgodotengineorgOpenGL ES 20 Renderer GeForce 840MPCIeSSE2OpenGL ES Batching ON"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.216841, 0)
+script = ExtResource("6")
 
-[node name="MeshInstance2" type="MeshInstance" parent="ToolHandler/Cut/--- Debugging process started ---Godot Engine v344stableofficial419e713a2 - httpsgodotengineorgOpenGL ES 20 Renderer GeForce 840MPCIeSSE2OpenGL ES Batching ON/Spatial"]
-transform = Transform( 0.5, 0, 0, 0, 0.396443, -0.304685, 0, 0.304685, 0.396443, 0, -2.4121, 3.6296 )
-mesh = SubResource( 6 )
+[node name="MeshInstance2" type="MeshInstance3D" parent="ToolHandler/Cut/--- Debugging process started ---Godot Engine v344stableofficial419e713a2 - httpsgodotengineorgOpenGL ES 20 Renderer GeForce 840MPCIeSSE2OpenGL ES Batching ON/Spatial"]
+transform = Transform3D(0.5, 0, 0, 0, 0.396443, -0.304685, 0, 0.304685, 0.396443, 0, -2.4121, 3.6296)
+mesh = SubResource("6")
 skeleton = NodePath("")
-material/0 = null
 
-[node name="MeshInstance3" type="MeshInstance" parent="ToolHandler/Cut/--- Debugging process started ---Godot Engine v344stableofficial419e713a2 - httpsgodotengineorgOpenGL ES 20 Renderer GeForce 840MPCIeSSE2OpenGL ES Batching ON/Spatial"]
-transform = Transform( 0.5, 0, 0, 0, 0.309643, -0.392583, 0, 0.392583, 0.309643, 0, -2.58732, -3.43796 )
-mesh = SubResource( 7 )
+[node name="MeshInstance3" type="MeshInstance3D" parent="ToolHandler/Cut/--- Debugging process started ---Godot Engine v344stableofficial419e713a2 - httpsgodotengineorgOpenGL ES 20 Renderer GeForce 840MPCIeSSE2OpenGL ES Batching ON/Spatial"]
+transform = Transform3D(0.5, 0, 0, 0, 0.309643, -0.392583, 0, 0.392583, 0.309643, 0, -2.58732, -3.43796)
+mesh = SubResource("7")
 skeleton = NodePath("")
-material/0 = null
 
-[node name="MeshInstance" type="MeshInstance" parent="ToolHandler/Cut/--- Debugging process started ---Godot Engine v344stableofficial419e713a2 - httpsgodotengineorgOpenGL ES 20 Renderer GeForce 840MPCIeSSE2OpenGL ES Batching ON/Spatial"]
-transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 4.29223, 0 )
-mesh = SubResource( 8 )
-material/0 = null
+[node name="MeshInstance" type="MeshInstance3D" parent="ToolHandler/Cut/--- Debugging process started ---Godot Engine v344stableofficial419e713a2 - httpsgodotengineorgOpenGL ES 20 Renderer GeForce 840MPCIeSSE2OpenGL ES Batching ON/Spatial"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 4.29223, 0)
+mesh = SubResource("8")
 
-[node name="CSGPolygon" type="CSGPolygon" parent="ToolHandler/Cut/--- Debugging process started ---Godot Engine v344stableofficial419e713a2 - httpsgodotengineorgOpenGL ES 20 Renderer GeForce 840MPCIeSSE2OpenGL ES Batching ON/Spatial"]
-transform = Transform( -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0 )
+[node name="CSGPolygon" type="CSGPolygon3D" parent="ToolHandler/Cut/--- Debugging process started ---Godot Engine v344stableofficial419e713a2 - httpsgodotengineorgOpenGL ES 20 Renderer GeForce 840MPCIeSSE2OpenGL ES Batching ON/Spatial"]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
 mode = 1
 spin_degrees = 360.0
 spin_sides = 16
-material = ExtResource( 1 )
-script = ExtResource( 5 )
+material = ExtResource("1")
+script = ExtResource("5")
 
-[node name="DirectionalLight" type="DirectionalLight" parent="."]
-transform = Transform( -0.665278, -0.224204, -0.712136, -0.722121, -0.0489907, 0.69003, -0.189595, 0.97331, -0.12931, 0, 7.92737, 0 )
+[node name="DirectionalLight" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.665278, -0.224204, -0.712136, -0.722121, -0.0489907, 0.69003, -0.189595, 0.97331, -0.12931, 0, 7.92737, 0)
 shadow_enabled = true
 shadow_bias = 4.137

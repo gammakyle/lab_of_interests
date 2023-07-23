@@ -34,7 +34,7 @@ func _ready():
 	]
 	_label_text.set_text(SongScene.GLOBAL_TEXT_ARR[0])
 	_label_info.set_text(str(_dialog_i+1) + "/" + str(SongScene.GLOBAL_TEXT_ARR.size()+1))
-	animation_player.play("anim_p_1")
+	animation_player.play("anim_p2_1")
 	pass # Replace with function body.
 
 
@@ -86,30 +86,31 @@ func _history_info():
 	if _dialog_i == 1:
 		_label_text.set_text(str(SongScene.GLOBAL_TEXT_ARR[_dialog_i]))
 		_label_info.set_text(str(_dialog_i+1) + "/" + str(SongScene.GLOBAL_TEXT_ARR.size()+1))
-		animation_player.play("anim_p_2")
+		animation_player.play("anim_p2_2")
 	if _dialog_i == 2:
 		_label_text.set_text(str(SongScene.GLOBAL_TEXT_ARR[_dialog_i]))
 		_label_info.set_text(str(_dialog_i+1) + "/" + str(SongScene.GLOBAL_TEXT_ARR.size()+1))
-		animation_player.play("anim_p_3")
+		animation_player.play("anim_p2_3")
 	if _dialog_i == 3:
 		_label_text.set_text(str(SongScene.GLOBAL_TEXT_ARR[_dialog_i]))
 		_label_info.set_text(str(_dialog_i+1) + "/" + str(SongScene.GLOBAL_TEXT_ARR.size()+1))
-		animation_player.play("anim_p_4")
+		animation_player.play("anim_p2_4")
 	if _dialog_i == 4:
 		_label_text.set_text(str(SongScene.GLOBAL_TEXT_ARR[_dialog_i]))
 		_label_info.set_text(str(_dialog_i+1) + "/" + str(SongScene.GLOBAL_TEXT_ARR.size()+1))
-		animation_player.play("anim_p_5")
+		animation_player.play("anim_p2_5")
 	if _dialog_i == 5:
 		_label_text.set_text(str(SongScene.GLOBAL_TEXT_ARR[_dialog_i]))
 		_label_info.set_text(str(_dialog_i+1) + "/" + str(SongScene.GLOBAL_TEXT_ARR.size()+1))
+		animation_player.play("anim_p2_6")
 	if _dialog_i == 6:
 		_label_text.set_text(str(SongScene.GLOBAL_TEXT_ARR[_dialog_i]))
 		_label_info.set_text(str(_dialog_i+1) + "/" + str(SongScene.GLOBAL_TEXT_ARR.size()+1))
-		animation_player.play("anim_p_6")
+		animation_player.play("anim_p2_7")
 	if _dialog_i == 7:
 		_label_text.set_text(str(SongScene.GLOBAL_TEXT_ARR[_dialog_i]))
 		_label_info.set_text(str(_dialog_i+1) + "/" + str(SongScene.GLOBAL_TEXT_ARR.size()+1))
-		animation_player.play("anim_p_7")
+		animation_player.play("anim_p2_8")
 	if _dialog_i == 8:
 		_label_text.set_text(str(SongScene.GLOBAL_TEXT_ARR[_dialog_i]))
 		_label_info.set_text(str(_dialog_i+1) + "/" + str(SongScene.GLOBAL_TEXT_ARR.size()+1))

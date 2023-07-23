@@ -33,7 +33,7 @@ func _ready():
 		"Если детали имеют значительный вылет - как мы можем это решить?"
 	]
 	_label_text.set_text(SongScene.GLOBAL_TEXT_ARR[0])
-	_label_info.set_text(str(_dialog_i+1) + "/" + str(SongScene.GLOBAL_TEXT_ARR.size()))
+	_label_info.set_text(str(_dialog_i+1) + "/" + str(SongScene.GLOBAL_TEXT_ARR.size()+1))
 	pass # Replace with function body.
 
 
@@ -84,34 +84,34 @@ func _history_info():
 	_dialog_i = _dialog_i+1
 	if _dialog_i == 1:
 		_label_text.set_text(str(SongScene.GLOBAL_TEXT_ARR[_dialog_i]))
-		_label_info.set_text(str(_dialog_i+1) + "/" + str(SongScene.GLOBAL_TEXT_ARR.size()))
+		_label_info.set_text(str(_dialog_i+1) + "/" + str(SongScene.GLOBAL_TEXT_ARR.size()+1))
 	if _dialog_i == 2:
 		_label_text.set_text(str(SongScene.GLOBAL_TEXT_ARR[_dialog_i]))
-		_label_info.set_text(str(_dialog_i+1) + "/" + str(SongScene.GLOBAL_TEXT_ARR.size()))
+		_label_info.set_text(str(_dialog_i+1) + "/" + str(SongScene.GLOBAL_TEXT_ARR.size()+1))
 		animation_player.play("anim_p_1")
 	if _dialog_i == 3:
 		_label_text.set_text(str(SongScene.GLOBAL_TEXT_ARR[_dialog_i]))
-		_label_info.set_text(str(_dialog_i+1) + "/" + str(SongScene.GLOBAL_TEXT_ARR.size()))
+		_label_info.set_text(str(_dialog_i+1) + "/" + str(SongScene.GLOBAL_TEXT_ARR.size()+1))
 		animation_player.play("anim_p_2")
 	if _dialog_i == 4:
 		_label_text.set_text(str(SongScene.GLOBAL_TEXT_ARR[_dialog_i]))
-		_label_info.set_text(str(_dialog_i+1) + "/" + str(SongScene.GLOBAL_TEXT_ARR.size()))
+		_label_info.set_text(str(_dialog_i+1) + "/" + str(SongScene.GLOBAL_TEXT_ARR.size()+1))
 		animation_player.play("anim_p_3")
 	if _dialog_i == 5:
 		_label_text.set_text(str(SongScene.GLOBAL_TEXT_ARR[_dialog_i]))
-		_label_info.set_text(str(_dialog_i+1) + "/" + str(SongScene.GLOBAL_TEXT_ARR.size()))
+		_label_info.set_text(str(_dialog_i+1) + "/" + str(SongScene.GLOBAL_TEXT_ARR.size()+1))
 		animation_player.play("anim_p_4")
 	if _dialog_i == 6:
 		_label_text.set_text(str(SongScene.GLOBAL_TEXT_ARR[_dialog_i]))
-		_label_info.set_text(str(_dialog_i+1) + "/" + str(SongScene.GLOBAL_TEXT_ARR.size()))
+		_label_info.set_text(str(_dialog_i+1) + "/" + str(SongScene.GLOBAL_TEXT_ARR.size()+1))
 		animation_player.play("anim_p_5")
 	if _dialog_i == 7:
 		_label_text.set_text(str(SongScene.GLOBAL_TEXT_ARR[_dialog_i]))
-		_label_info.set_text(str(_dialog_i+1) + "/" + str(SongScene.GLOBAL_TEXT_ARR.size()))
+		_label_info.set_text(str(_dialog_i+1) + "/" + str(SongScene.GLOBAL_TEXT_ARR.size()+1))
 		animation_player.play("anim_p_6")
 	if _dialog_i == 8:
 		_label_text.set_text(str(SongScene.GLOBAL_TEXT_ARR[_dialog_i]))
-		_label_info.set_text(str(_dialog_i+1) + "/" + str(SongScene.GLOBAL_TEXT_ARR.size()))
+		_label_info.set_text(str(_dialog_i+1) + "/" + str(SongScene.GLOBAL_TEXT_ARR.size()+1))
 		_b1.show()
 		_b2.show()
 		_b3.show()
@@ -120,19 +120,19 @@ func _history_info():
 		_b3.set_text("Повернуть ключ")
 	if _dialog_i == 9:
 		_label_text.set_text(str(SongScene.GLOBAL_TEXT_ARR[_dialog_i]))
-		_label_info.set_text(str(_dialog_i+1) + "/" + str(SongScene.GLOBAL_TEXT_ARR.size()))
+		_label_info.set_text(str(_dialog_i+1) + "/" + str(SongScene.GLOBAL_TEXT_ARR.size()+1))
 		_b1.set_text("Провернуть вкручную")
 		_b2.set_text("Сменить шпиндель")
 		_b3.set_text("Устранить помехи")
 	if _dialog_i == 10:
 		_label_text.set_text(str(SongScene.GLOBAL_TEXT_ARR[_dialog_i]))
-		_label_info.set_text(str(_dialog_i+1) + "/" + str(SongScene.GLOBAL_TEXT_ARR.size()))
+		_label_info.set_text(str(_dialog_i+1) + "/" + str(SongScene.GLOBAL_TEXT_ARR.size()+1))
 		_b1.set_text("Закрепить поджатием")
 		_b2.set_text("Подложить поддон")
 		_b3.set_text("Оставить как есть")
 	if _dialog_i == 11:
 		_label_text.set_text("Так. Давай посмотрим. Ты набрал "+str(_right)+" из 3 правильных ответов. Если ты захочешь вернуться к этому уроку - ты можешь сделать это в любое время. До новых встреч!")
-		_label_info.set_text(str(_dialog_i+1) + "/" + str(SongScene.GLOBAL_TEXT_ARR.size()))
+		_label_info.set_text(str(_dialog_i+1) + "/" + str(SongScene.GLOBAL_TEXT_ARR.size()+1))
 		_b1.hide()
 		_b2.hide()
 		_b3.hide()

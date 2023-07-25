@@ -460,6 +460,7 @@ shape = SubResource("SphereShape3D_uyvi4")
 
 [node name="infoes" type="Node3D" parent="scene objects"]
 transform = Transform3D(0.0883883, 0, 0.0883883, 0, 33.3333, 0, -0.141421, 0, 0.141421, -0.623594, 0, -4.52622)
+visible = false
 
 [node name="info_rock" parent="scene objects/infoes" instance=ExtResource("4_do67m")]
 transform = Transform3D(0.229325, 0, 0.444309, 0, 0.5, 0, -0.444309, 0, 0.229325, -11.0051, 0.756645, 4.53567)
